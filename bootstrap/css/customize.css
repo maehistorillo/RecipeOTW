@@ -1,0 +1,46 @@
+body{
+	font-family: arial;
+	font-size: 14px;
+	background-color: #bcbab6;
+
+}
+
+#wrapper{
+	width: 900px;
+	overflow: auto;
+	margin: 0 auto;
+	color: #000;
+}
+#header{
+	
+	
+}
+#header_top3{
+	width: auto;
+	overflow: auto;
+	margin: 0 auto;
+}
+#header_top9{
+	width: auto;
+	overflow: auto;
+	margin: 0 auto;
+	text-align: right;
+}
+
+/*---NAVBARS---*/
+
+a {
+    color: #512902;
+    -webkit-transition: all .2s ease-in-out;
+    -moz-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+}
+
+a:hover,
+a:focus {
+    text-decoration: none;
+    color: #512902;
+}
+	
+
+
