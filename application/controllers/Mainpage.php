@@ -56,10 +56,10 @@ class Mainpage extends CI_Controller {
 		if( empty($enter) ){
 			 redirect (base_url('Mainpage/Login/'));
 		}				
-		$data['title'] = "Welcome Admin!";
-		
-		$this->load->view('include/header',$data);
+		$title['titleadmin'] = "ROTW: Admin";					
+		$this->load->view('include/aheader',$title);
 		$this->load->view('mainpage/dashboard');
+		
 	}
 
 	public function AdminLogin()
@@ -68,16 +68,16 @@ class Mainpage extends CI_Controller {
 		$this->load->view('include/header',$data);
 		$this->load->view('mainpage/login_admin');
 	}	
-	public function Category()
+	public function AdminCategory()
 	{
-		$data['title'] = "ROTW Admin: Category" ;					
-		$this->load->view('include/header',$data);
+		$title['titleadmin'] = "ROTW Admin: Category" ;					
+		$this->load->view('include/aheader',$title);
 		$this->load->view('mainpage/admin/categories');
-	}	
-		public function ARecipe()
+	}
+		public function AdminRecipe()
 	{
-		$data['title'] = "ROTW Admin: Recipe" ;					
-		$this->load->view('include/header',$data);
+		$title['titleadmin'] = "ROTW Admin: Recipe" ;					
+		$this->load->view('include/aheader',$title);
 		$this->load->view('mainpage/admin/recipe_admin');
 	}	
 	public function signupAction(){
