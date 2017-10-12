@@ -49,6 +49,13 @@ class Mainpage extends CI_Controller {
 		$this->load->view('mainpage/dashboard');
 	}	
 	
+	public function AdminLogin()
+	{
+		$data['title'] = "ROTW: Admin Login" ;					
+		$this->load->view('include/header',$data);
+		$this->load->view('mainpage/login_admin');
+	}
+	
 	public function signupAction(){
 				
 		$username = $this->input->post('username');
