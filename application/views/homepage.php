@@ -58,7 +58,7 @@
 
     <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
         <div class="container col-lg-12">
-            <div class="navbar-header page-scroll col-lg-4">
+            <div class="navbar-header page-scroll col-lg-5">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
                     <i class="fa fa-bars"></i>
                 </button>
@@ -68,7 +68,7 @@
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse navbar-right navbar-main-collapse col-lg-8">
+            <div class="collapse navbar-collapse navbar-right navbar-main-collapse col-lg-7">
       <ul class="nav navbar-nav">
         <li><a href="#intro">Home</a></li>
         <li><a href="#frecipe">Featured Recipes</a></li>
@@ -96,7 +96,7 @@
 			<h4 id="h42">IS THE ANSWER TO YOUR PROBLEM</h4>
 		</div>
 		<div class="page-scroll">
-			<a href="recipes.html" class="btn btn-rectangle">
+			<a href="<?php echo base_url('Mainpage/Recipe')?>" class="btn btn-rectangle">
 				Get Started<!--<i class="fa fa-angle-double-down animated"></i>-->
 			</a>
 		</div>
@@ -130,7 +130,7 @@
 		
 		
 		<div id="overlay" >
-			<!-- <div id="text">Overlay Text</div> -->
+		
 			<div class="container2" style="padding-top:50px">
 			<p>
 			<a class="close" onclick="off()">close</a>	
@@ -139,7 +139,7 @@
 		<div class="row">
 			<div class="col-md-4">
 			<h3>Home-Style Lamb Curry</h3>
-			<img src="<?php echo base_url('bootstrap/img/cat/lambcurry'); ?>" />
+			<img src="<?php echo base_url('bootstrap/img/cat/lambcurry,jpg'); ?>" />
 			</div>
 			<div class="col-md-4">
 			<h3>Ingredients</h3>
@@ -188,7 +188,7 @@
 				<div class="team boxed-grey">	
 
 					<div class="card">
-					  <img src="<?php echo base_url('bootstrap/img/cat/lambcurry'); ?>" alt="Kare Kare" style="width:100%">
+					  <img src="<?php echo base_url('bootstrap/img/cat/lambcurry.jpg'); ?>" alt="Kare Kare" style="width:100%">
 					  <h1>Dish</h1>
 					  <p class="title">Home-Style Lamb Curry<br /><br /></p>
 					  <p><button onclick="on()">View</button></p>
@@ -203,7 +203,7 @@
 			<div class="team boxed-grey">
 				
 				<div class="card">
-				  <img src="<?php echo base_url('bootstrap/img/cat/parmesanpotatosalad'); ?>" alt="Spag" style="width:100%">
+				  <img src="<?php echo base_url('bootstrap/img/cat/parmesanpotatosalad.jpg'); ?>" alt="Spag" style="width:100%">
 				  <h1>Side Dish</h1>
 				  <p class="title">Lemon-Caper Parmesan Potato Salad Bites</p>
 				  <p><button onclick="on()">View</button></p>
@@ -218,7 +218,7 @@
 			<div class="wow bounceInUp" data-wow-delay="0.8s"> 
 			<div class="team boxed-grey">
 				<div class="card">
-				  <img src="<?php echo base_url('bootstrap/img/cat/yogurtpistacio'); ?>" alt="Burger" style="width:100%">
+				  <img src="<?php echo base_url('bootstrap/img/cat/yogurtpistacio.jpg'); ?>" alt="Burger" style="width:100%">
 				  <h1>Dessert</h1>
 				  <p class="title">Easy Yogurt, Honey And Pistachio Popsicles</p>
 				  <p><button>View</button></p>
@@ -235,7 +235,7 @@
 				<div class="card">
 				  <img src="<?php echo base_url('bootstrap/img/cat/Heavenly Blueberry Smoothie'); ?>"" alt="Pizza" style="width:100%">
 				  <h1>Smoothies</h1>
-				  <p class="title">Heavenly Blueberry <br />Smoothie</p>
+				  <p class="title">Heavenly Blueberry <br />Smoothie</p>.jpg
 				  <p><button>View</button></p>
 				</div>
 
@@ -248,7 +248,7 @@
 
         	<div class="col-md-12">
 						<br>
-						<a href="recipes.html" class="btn"><button>View All Categories</button></a>
+						<a href="<?php echo base_url('Mainpage/Recipe')?>" class="btn"><button>View All Categories</button></a>
         		
 			</div>
 
@@ -277,61 +277,7 @@
 			</div>
 		</div>
 	
-        <div class="row">
-							
-			<div class="container2" >
-				<div class="col-xs-6 col-sm-3 col-md-3">
-					<div class="wow fadeInLeft" data-wow-delay="0.2s">
-						<div class="team boxed-grey" >
-							<img src="<?php echo base_url('bootstrap/img/cuisines/african'); ?>" alt="Dishes" class="image" style="width:100%"  />
-							<div class="middle">
-								<a href="recipes.html" ><div class="text">Dishes</div></a>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-
-			
-			<div class="container2">
-				<div class="col-xs-6 col-sm-3 col-md-3">
-					<div class="wow fadeInLeft" data-wow-delay="0.4s">
-						<div class="team boxed-grey">
-							<img src="<?php echo base_url('bootstrap/img/cat/bacontomatobites'); ?>" alt="Side Dish" class="image" style="width:100%" />
-							<div class="middle">
-								<a href="recipes.html" ><div class="text">Side Dish</div></a>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			
-			<div class="container2">
-				<div class="col-xs-6 col-sm-3 col-md-3">
-					<div class="wow fadeInLeft" data-wow-delay="0.6s">
-						<div class="team boxed-grey">
-							<img src="<?php echo base_url('bootstrap/img/cat/caramelpears'); ?>" alt="Desserts" class="image" style="width:100%" />
-							<div class="middle">
-								<a href="recipes.html" ><div class="text">Desserts</div></a>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			
-			<div class="container2">
-				<div class="col-xs-6 col-sm-3 col-md-3">
-					<div class="wow fadeInLeft" data-wow-delay="0.8s">
-						<div class="team boxed-grey">
-							<img src="<?php echo base_url('bootstrap/img/cat/Easy Mango Banana Smoothie'); ?>" alt="Smoothies" class="image" style="width:100%" />
-							<div class="middle">
-								<a href="recipes.html" onclick="openCity('Smoothies')" ><div class="text">Smoothies</div></a>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
+       
        
        
 
@@ -339,7 +285,7 @@
 		 
 		 </div>
 	</section>
-	<!-- /Section: services -->
+	<!-- /Section: About Us -->
 
 	
 
@@ -367,14 +313,7 @@
 	</footer>
 
     <!-- Core JavaScript Files -->
-    <script src="<?php echo base_url('bootstrap/js/jquery.min.js'); ?>"></script>
-    <script src="<?php echo base_url('bootstrap/js/bootstrap.min.js'); ?>"></script>
-    <script src="<?php echo base_url('bootstrap/js/jquery.easing.min.js'); ?>"></script>	
-	<script src="<?php echo base_url('bootstrap/js/jquery.scrollTo.js'); ?>"></script>
-	<script src="<?php echo base_url('bootstrap/js/recipe.js'); ?>"></script>
-	<script src="<?php echo base_url('bootstrap/js/wow.min.js'); ?>"></script>
-    <!-- Custom Theme JavaScript -->
-    <script src="<?php echo base_url('bootstrap/js/custom.js'); ?>"></script>
+   
 	<script>
 function on() {
     document.getElementById("overlay").style.display = "block";
