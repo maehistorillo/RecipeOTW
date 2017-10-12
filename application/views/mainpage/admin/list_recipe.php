@@ -20,8 +20,8 @@
  			<?php foreach($recipes as $row):?>
 			<tr>
 				<td><?php echo $row['recipename']; ?></td>
-				<td><?php echo $row['recipetype']; ?></td>
-				<td><?php echo $row['recipedetails']; ?></td>
+				<td><?php echo $row['recipecat']; ?></td>
+				<td><?php echo $row['recipeing']; ?></td>
 				<td><img src = "<?php echo base_url('image/'.$row['recipeimg'].''); ?>" class="image" style="width:128px;height:128px" /></td>
 				<td><?php echo $row['recipecost']; ?></td>
 				<td><?php echo $row['recipeprocedure']; ?></td>

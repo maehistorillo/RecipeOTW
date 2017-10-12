@@ -2,7 +2,7 @@
 <html lang="en">
 <html>
 <head>
-	<title><?php echo $titleadmin; ?></title>
+	<title><?php echo $title; ?></title>
 
 	<!-- bootstrap -->
 	<link rel="stylesheet" href="<?php echo base_url('bootstrap/assests/bootstrap/css/bootstrap.min.css'); ?>">
