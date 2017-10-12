@@ -1,5 +1,5 @@
   <div class="container">
-  <div class="row vertical">
+  <div class="row">
       <div class="col-md-10 col-md-offset-1">
         <div class="panel panel-info">
           <div class="panel-heading">
@@ -35,7 +35,7 @@
                 </div>
                  <div class="form-group">
                   <div class="col-xs-offset-3 col-xs-10">
-                    <a href="login.php">Already have an account?</a>
+                    <a href="login.php" style="font-size:12px;">Already have an account?</a>
                     <br />
                   </div>
                 </div>

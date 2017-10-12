@@ -11,11 +11,11 @@
         <div class="panel panel-info">
           <div class="panel-heading">
  
-            <h3 class="panel-title">Please Sign in</h3>
+            <h3 class="panel-title">Hello Admin</h3>
           </div>
           <div class="panel-body">
 
-            <form class="form-horizontal" action="<?php echo base_url('Mainpage/loginAction'); ?>" method="post" id="loginForm">
+            <form class="form-horizontal" action="<?php echo base_url('Mainpage/adminloginAction'); ?>" method="post" id="loginForm">
               <fieldset>
                 <div class="form-group">
                   <label for="username" class="col-sm-2 control-label">Username</label>
@@ -31,11 +31,8 @@
                 </div>
                 <div class="form-group">
                   <div class="col-sm-offset-2 col-sm-10 pull-left">
-                    <a href="#" style="font-size:14px;" >Forgot Password? |</a>
-                    <a href="<?php echo base_url('/Mainpage/Signup'); ?>" style="font-size:14px;">Create an account?</a>
-                  </div>
-                  <div class="col-sm-offset-2 col-sm-10">
-                    <a href="<?php echo base_url('/Mainpage/AdminLogin'); ?>" style="font-size:14px;">Log-in as Admin</a>
+                    <a href="#" style="font-size:14px;" >Forgot Password? </a> |
+                    <a href="<?php echo base_url('/Mainpage/Home'); ?>" style="font-size:14px;">Back to Home</a>
                   </div>
                 </div>
                 <div class="form-group">

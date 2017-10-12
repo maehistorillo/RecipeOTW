@@ -16,21 +16,45 @@
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+            <?php 
+			if(!isset($username)){
+				echo '
+			<div class="collapse navbar-collapse navbar-right navbar-main-collapse">
       <ul class="nav navbar-nav">
-        <li><a href="<?php echo base_URL('Mainpage/Home/'); ?>">Home</a></li>
+        <li><a href="'.base_url('Mainpage/Home/').'">Home</a></li>
         <li><a href="#recipe">Featured Recipes</a></li>
 		<li><a href="#service">Cuisines</a></li>
 		<li><a href="#contact">Reviews</a></li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">Accounts <b class="caret"></b></a>
           <ul class="dropdown-menu">
-            <li><a href="<?php echo base_url('/Mainpage/Login'); ?>">Log In</a></li>
-            <li><a href="<?php echo base_url('/Mainpage/Signup'); ?>">Sign Up</a></li>
+            <li><a href="'.base_url('Mainpage/Login').'">Log In</a></li>
+            <li><a href="'.base_url('Mainpage/Signup').'">Sign Up</a></li>
           </ul>
         </li>
       </ul>
-            </div>
+            </div> 
+			';
+			}
+			else{
+				echo '<div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+      <ul class="nav navbar-nav">
+        <li><a href="'.base_url('Mainpage/Home/').'">Home</a></li>
+        <li><a href="#recipe">Featured Recipes</a></li>
+		<li><a href="#service">Cuisines</a></li>
+		<li><a href="#contact">Reviews</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Accounts <b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li><a href="'.base_url('/Mainpage/Admin').'">'.$username.'</a></li>
+            <li><a href="'.base_url('/Mainpage/logout').'">Logout</a></li>
+          </ul>
+        </li>
+      </ul>
+            </div>';
+			}
+			?>
+			
             <!-- /.navbar-collapse -->
         </div>
         <!-- /.container -->

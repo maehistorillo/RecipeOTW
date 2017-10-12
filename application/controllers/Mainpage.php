@@ -19,6 +19,7 @@ class Mainpage extends CI_Controller {
 	
 	public function Home(){
 		$data['title'] = "Recipe OTW";
+		$data['username'] = $this->session->userdata('username');
 		
 		$this->load->view('include/header',$data);
 		$this->load->view('mainpage/homepage');
@@ -63,7 +64,7 @@ class Mainpage extends CI_Controller {
 
 	public function AdminLogin()
 	{
-		$data['title'] = "ROTW: Admin Login" ;					
+		$data['title'] = "ROTW Admin Login" ;					
 		$this->load->view('include/header',$data);
 		$this->load->view('mainpage/login_admin');
 	}	
@@ -79,16 +80,6 @@ class Mainpage extends CI_Controller {
 		$this->load->view('include/header',$data);
 		$this->load->view('mainpage/admin/recipe_admin');
 	}	
-
-	
-	public function AdminLogin()
-	{
-		$data['title'] = "ROTW: Admin Login" ;					
-		$this->load->view('include/header',$data);
-		$this->load->view('mainpage/login_admin');
-	}
-	
-
 	public function signupAction(){
 
 
@@ -177,6 +168,25 @@ class Mainpage extends CI_Controller {
 		
 	}
 	
+	public function viewUsers(){
+		$enter =  $this->session->userdata('username');
+		if( empty($enter) ){
+			 redirect (base_url('Mainpage/Login/'));
+		}	
+		
+		$data['users'] = $this->user->viewusers('users');
+		$this->load->view('Mainpage/Admin/view_users',$data);
+	}
+		
+	public function delRecipe($name){	
+		$this->recipe->del(str_replace('%20', ' ', $name));	
+		redirect(base_url('Mainpage/listRecipe'));	
+	}
+	
+	public function delUser($name){	
+		$this->user->del(str_replace('%20', ' ', $name));	
+		redirect(base_url('Mainpage/viewUsers'));	
+	}
 
 }
 
