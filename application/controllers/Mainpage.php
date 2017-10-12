@@ -137,13 +137,13 @@ class Mainpage extends CI_Controller {
 	public function submitRecipe() {
 		
 		$recipename = $this->input->post('recipename');
-		$recipetype = $this->input->post('recipetype');
-		$recipedetails = $this->input->post('recipedetails');
+		$recipecat = $this->input->post('recipecat');
+		$recipeing = $this->input->post('recipeing');
 		$recipeimg = $this->input->post('recipeimg');
 		$recipecost = $this->input->post('recipecost');
 		$recipeprocedure = $this->input->post('recipeprocedure');
 		
-		$flag = $this->recipe->submit($recipename, $recipetype, $recipedetails, $recipeimg, $recipecost, $recipeprocedure);
+		$flag = $this->recipe->submit($recipename, $recipecat, $recipeing, $recipeimg, $recipecost, $recipeprocedure);
 		
 		 if($flag){
 		echo 'Recipe Save!';
