@@ -1,4 +1,4 @@
-	
+
 <div id="preloader">
     <div id="load"></div>
   </div>
@@ -36,6 +36,13 @@
 	<button type="submit">View Recipe</button>
 	</form>
 	
+	<form action = "<?php echo base_url('Mainpage/viewUsers/'); ?>" method = "post">
+	
+	
+	<button type="submit">View List of Users</button>
+	</form>
+	
+	
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -43,7 +50,7 @@
 
       <ul class="nav navbar-nav navbar-right">        
 
-      	<li id="navDashboard"><a href="<?php echo base_url('Mainpage/Admin'); ?>">  Dashboard</a></li>        
+      	<li id="navDashboard"><a href="<?php echo base_url('Mainpage/Home'); ?>">  Home</a></li>        
         
         <li id="navBrand"><a href="<?php echo base_url('Mainpage/ARecipe'); ?>"><i class="glyphicon glyphicon-list-alt"></i>  Recipe</a></li>        
 

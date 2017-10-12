@@ -1,8 +1,32 @@
 <!-- Preloader -->
+<head>
 <div id="preloader">
     <div id="load"></div>
   </div>
+  
+  <script src="<?php echo base_url('bootstrap/js/recipe.js'); ?>"></script>
+	<script type="text/javascript" src="<?php echo base_url('bootstrap/js/jquery-1.11.3.min.js'); ?>"></script>
+	
+	<script src="<?php echo base_url('bootstrap/js/custom.js'); ?>"></script>
+	<script type="text/javascript" src="<?php echo base_url('bootstrap/js/bootstrap-datepicker.min.js'); ?>"></script>
+  
+  
+ <script>
+    $(document).ready(function(){
+      var date_input=$('input[name="date"]'); //our date input has the name "date"
+      var container=$('.bootstrap-iso form').length>0 ? $('.bootstrap-iso form').parent() : "body";
+      var options={
+        format: 'mm/dd/yyyy',
+        container: container,
+        todayHighlight: true,
+        autoclose: true,
+      };
+      date_input.datepicker(options);
+    })
+</script>
+</head>
 
+<body>
 <section id="intro" class="intro" >
   <div class="container">
   <div class="row vertical">
@@ -67,18 +91,11 @@
                   </div>
                 </div>
                 <div class="form-group">
-                  <label for="birthdate" class="col-xs-3 control-label">Date of Birth: </label>
-                  <div class="col-xs-3">
-                    <input type="text" required class="form-control" id="birthdate" name="birthmonth" placeholder="Month" />
-                </div>
-                <div class="col-xs-3">
-                    <input type="tel" required class="form-control" id="birthdate" name="birthdate" placeholder="Date" />
-                </div>
-                <div class="col-xs-3">
-                    <input type="tel" required class="form-control" id="birthdate" name="birthyear" placeholder="Year" />
-                    <br />
-                </div>
-                </div>
+          <label for="dob" class="col-sm-2 control-label">Date of Birth:</label>
+          <div class="col-sm-4">
+              <input class="form-control datepicker" required id="birthdate" name="birthdate" placeholder="MM/DD/YYY" type="text"/>
+          </div>
+          </div>
                 <div class="form-group">
                 <label class="col-xs-3 control-label" for="address">Address: </label>
                 <div class="col-xs-9">
@@ -97,3 +114,4 @@
     </div>
     <!-- /row -->
   </div>
+ </body>
