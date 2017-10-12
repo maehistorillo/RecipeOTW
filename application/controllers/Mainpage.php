@@ -79,6 +79,16 @@ class Mainpage extends CI_Controller {
 		$this->load->view('include/header',$data);
 		$this->load->view('mainpage/admin/recipe_admin');
 	}	
+
+	
+	public function AdminLogin()
+	{
+		$data['title'] = "ROTW: Admin Login" ;					
+		$this->load->view('include/header',$data);
+		$this->load->view('mainpage/login_admin');
+	}
+	
+
 	public function signupAction(){
 
 
