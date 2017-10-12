@@ -280,8 +280,8 @@ hr {
 ============================ */
 
 .home-section {
-    padding-top: 110px;
-    padding-bottom: 110px;
+    padding-top: 80px;
+    padding-bottom: 80px;
 	display:block;
     position:relative;
     z-index:120;
@@ -326,7 +326,7 @@ hr {
 .intro {
 	width:100%;
 	position:relative;
-	background: url(../img/bg1.jpg) no-repeat top center;
+	background: url(../img/bg2.jpg) no-repeat top center;
 }
 
 #intro.intro {
