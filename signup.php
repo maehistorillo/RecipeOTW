@@ -1,7 +1,7 @@
-<DOCTYPE! html>
+<!DOCTYPE html>
 
 <head>
-
+<script src="../bootstrap/js/showhide.min.js"></script>
  <script>
 
     $(function() {
@@ -16,7 +16,7 @@
             input.setCustomValidity('Password Must Match');
         } else {
             // input is valid -- reset the error message
-            input.setCustomValidity('Password Match');
+            input.setCustomValidity('');
         }
     }
 
@@ -31,7 +31,47 @@
         }
     });
 });
+
+    function swapInput(tag, type) {
+  var el = document.createElement('input');
+  el.id = tag.id;
+  el.type = type;
+  el.name = tag.name;
+  el.value = tag.value; 
+  tag.parentNode.insertBefore(el, tag);
+  tag.parentNode.removeChild(tag);
+}
+
+function toggle_password(target){
+    var d = document;
+    var tag = d.getElementById(target);
+    var tag2 = d.getElementById("showhide");
+
+    if (tag2.innerHTML == 'Show'){
+
+        swapInput(tag, 'text');
+        tag2.innerHTML = 'Hide';
+
+    } else {
+        swapInput(tag, 'password');   
+        tag2.innerHTML = 'Show';
+    }
+}
+
+$(document).ready(function() {
+  $("#showHide").click(function() {
+    if ($("#password").attr("type") == "password") {
+      $("#password").attr("type", "text");
+
+    } else {
+      $("#password").attr("type", "password");
+    }
+  });
+});
+
+
 </script>
+      
 </head>
 <body>
 <!-- Preloader -->
@@ -47,7 +87,7 @@
             <h3 class="panel-title">Sign Up</h3>
           </div>
           <div class="panel-body">
-            <div class="col-md-6">
+            <div class="col-md-5">
             <form class="form-horizontal" action="<?php echo base_url('Mainpage/signupAction'); ?>" method="post" id="loginForm">
               <fieldset class="fieldset">
                 <div class="form-group">
@@ -66,22 +106,21 @@
                   <label for="password" class="col-xs-3 control-label">Password: </label>
                   <div class="col-xs-9">
                     <input type="password" required maxlength="15" class="form-control" id="password" name="password" placeholder="Password" autocomplete="off" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and uppercase letter, and can be 8-15 characters" />
+                    <input type="checkbox" id="showHide" />
+                    <label for="showHide" id="showHideLabel">Show Password</label>
                   </div>
                 </div>
+
                 <div class="form-group">
                   <label for="cpassword" class="col-xs-3 control-label">Confirm Password: </label>
                   <div class="col-xs-9">
                     <input type="password" required class="form-control" id="cpassword" name="cpassword" placeholder="Confirm Password" autocomplete="off" oninput="check(this)" /> <span id='message'></span>
                   </div>
                 </div>
-                <div class="form-group">
-                  <div class="col-md-offset-3">
-                    <button type="submit" class="btn btn-default"> <i class="glyphicon glyphicon-log-in"></i> Sign up</button>
-                </div>
-                  </div>
+                
               </div> 
             </fieldset>
-                <div class="col-md-6">     
+                <div class="col-md-7">     
                 <div class="form-group">
                   <label for="fullname" class="col-xs-3 control-label">Full Name: </label>
                   <div class="col-xs-3">
@@ -96,7 +135,7 @@
                   </div>
                 </div>
                 <div class="form-group">
-                    <label for="dob" class="col-sm-4 control-label">Date of Birth:</label>
+                    <label for="dob" class="col-sm-3 control-label">Date of Birth:</label>
                     <div class="col-sm-5">
                         <input class="form-control datepicker" required id="birthdate" name="birthdate" placeholder="MM/DD/YYY" type="date"/>
                     </div>
@@ -109,11 +148,16 @@
                 </div>
                 <div class="form-group">
                   <div class="col-sm-offset-0 col-xs-10">
-                    <a href="<?php echo base_url('/Mainpage/Login'); ?>"><br />Already have an account?</a>
+                    <a href="<?php echo base_url('/Mainpage/Login'); ?>"><br />Already have an account?<br /></a>
                     <br />
                   </div>
                 </div>
-                </div>                
+                </div>    
+                <div class="form-group">
+                  <div class="col-md-offset-4 col-sm-4">
+                    <button type="submit" class="btn btn-default"> <i class="glyphicon glyphicon-log-in"></i> Sign up</a></button>
+                </div>
+                  </div>            
             </form>
           </div>
           <!-- panel-body -->
