@@ -3,12 +3,12 @@
 
 		<ol class="breadcrumb">
 		  <li><a href="<?php echo base_url('Mainpage/Admin') ?>">Home</a></li>		  
-		  <li class="active">Recipe</li>
+		  <li class="active">Orders</li>
 		</ol>
 
 		<div class="panel panel-default">
 			<div class="panel-heading">
-				<div class="page-heading"> <i class="glyphicon glyphicon-edit"></i> Manage Recipe</div>
+				<div class="page-heading"> <i class="glyphicon glyphicon-edit"></i> Manage Orders</div>
 			</div> <!-- /panel-heading -->
 			<div class="panel-body">
 
