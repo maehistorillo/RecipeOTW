@@ -15,8 +15,22 @@ class Mainpage extends CI_Controller {
 	public function Home(){
 		$data['title'] = "";
 		
+		$this->load->view('script');
 		$this->load->view('homepage');
 	//	$this->load->view();
+	
+	
+	}
+	
+	public function Recipe(){
+		$data['title'] = "";
+		
+		
+		$this->load->view('script');
+		$this->load->view('mainpage/recipe_page');
+	//	$this->load->view();
+	
+	
 	}
 }
 ?>
