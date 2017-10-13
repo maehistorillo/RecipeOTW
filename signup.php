@@ -122,29 +122,29 @@ $(document).ready(function() {
             </fieldset>
                 <div class="col-md-7">     
                 <div class="form-group">
-                  <label for="fullname" class="col-xs-3 control-label">Full Name: </label>
-                  <div class="col-xs-3">
+                  <label for="fullname" class="col-xs-2 control-label">Full Name: </label>
+                  <div class="col-xs-4">
                     <input type="text" required class="form-control" id="surname" name="surname" placeholder="Surname" autocomplete="off" />
                   </div>
-                  <div class="col-xs-3">
+                  <div class="col-xs-4">
                     <input type="text" required class="form-control" id="firstname" name="firstname" placeholder="Firstname" autocomplete="off" />
                   </div>
-                  <div class="col-xs-3">
+                  <div class="col-xs-2">
                     <input type="text" required maxlength="1" class="form-control" id="miname" name="miname" placeholder="M.I" autocomplete="off" />
                     <br />
                   </div>
                 </div>
                 <div class="form-group">
-                    <label for="dob" class="col-sm-3 control-label">Date of Birth:</label>
-                    <div class="col-sm-5">
-                        <input class="form-control datepicker" required id="birthdate" name="birthdate" placeholder="MM/DD/YYY" type="date"/>
+                    <label for="birthdate" class="col-sm-3 control-label">Date of Birth:</label>
+                    <div class="col-sm-4">
+                        <input class="form-control datepicker" required id="birthdate" name="birthdate" type="date"/>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="col-sm-5 control-label" for="address">Address: </label>
-                    <div class="col-xs-9">
-                <textarea rows="3" required class="form-control" id="address" name="address" placeholder="Address" ></textarea>
-                </div>
+                    <label class="col-sm-8 control-label" for="address">Address: </label>
+                    <div class="col-xs-7">
+                    <textarea rows="3" required class="form-control" id="address" name="address" placeholder="Address" ></textarea>
+                    </div>
                 </div>
                 <div class="form-group">
                   <div class="col-sm-offset-0 col-xs-10">
