@@ -27,14 +27,7 @@
 
             <form class="form-horizontal" action="<?php echo base_url('Mainpage/loginAction'); ?>" method="post" id="loginForm">
               <fieldset style="padding-top: 10px;">
-                <!--
-                <div class="form-group">
-                  <label for="username" class="col-sm-2 control-label">Username</label>
-                  <div class="col-sm-10">
-                    <input type="text" class="form-control" id="username" name="username" placeholder="Username" autocomplete="off" required/>
-                  </div>
-                </div>
-              -->
+             
               <div class="form-group" style="padding-left: 18px;">
                   <label for="email" class="col-xs-2 control-label" style="color: #351E24;">Email: </label>
                   <div class="col-xs-9" style="padding-left: 42px; padding-right: 16px;">
