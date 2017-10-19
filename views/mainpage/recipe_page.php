@@ -1,4 +1,5 @@
-    <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+
+	<nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
         <div class="container">
             <div class="navbar-header page-scroll ">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
@@ -7,13 +8,13 @@
 				<a class="navbar-brand" href="index.html">
 				<h1  id="shadow">ROTW</h1>
 				</a>
-				<img class="logo" src="<?php echo base_url('bootstrap/img/icons/logo5.png'); ?>" class="img-responsive">
+				
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse navbar-right navbar-main-collapse" >
       <ul class="nav navbar-nav">
-        <li><a href="index.html">Home</a></li>
+        <li><a href="<?php echo base_url('Mainpage/Home') ?>">Home</a></li>
 		<li><a href="#cuisine">My Account</a></li>
 		<li><a href="#about">Add Review</a></li>
 		<li><a href="#review">Log Out</a></li>
@@ -32,10 +33,10 @@
 <div class="col-md-12">
 
 
-<button class="tablink" onclick="openCity('Dishes')" id="defaultOpen">Dishes</button>
-<button class="tablink" onclick="openCity('Side Dish')">Side Dish</button>
-<button class="tablink" onclick="openCity('Desserts')">Desserts</button>
-<button class="tablink" onclick="openCity('Smoothies')">Smoothies</button>
+<button class="tablink" onclick="openCat('Dishes')" id="defaultOpen">Dishes</button>
+<button class="tablink" onclick="openCat('Side Dish')">Side Dish</button>
+<button class="tablink" onclick="openCat('Desserts')">Desserts</button>
+<button class="tablink" onclick="openCat('Smoothies')">Smoothies</button>
 
 </div>
 
@@ -46,16 +47,16 @@
 	</div>
 
 	<div class="col-md-3">
-		<div class="card">
-			<img src="<?php echo base_url('bootstrap/img/cat/courgettebacon.png'); ?>" alt="Creamy Courgette & Bacon Pasta" style="width:100%">
+		<div class="card" style="height:53%">
+			<img src="<?php echo base_url('bootstrap/img/cat/courgettebacon.jpg'); ?>" alt="Creamy Courgette & Bacon Pasta" style="width:100%">
 			<h5><br />Creamy Courgette & Bacon Pasta</h5>
 			<p><span style="font-size:30px; cursor:pointer" class="open" data-target="A1"><button >See More...</button></span></p>
 		</div>
 	</div>
 	
 	<div class="col-md-3">
-		<div class="card">
-			<img src="<?php echo base_url('bootstrap/img/cat/marmitespag.png'); ?>" alt="Marmite & Pancetta Spaghetti" style="width:100%">
+		<div class="card" style="height:53%" style="height:53%" style="height:53%">
+			<img src="<?php echo base_url('bootstrap/img/cat/marmitespag.jpg'); ?>" alt="Marmite & Pancetta Spaghetti" style="width:100%">
 
 			<h5><br />Marmite & Pancetta Spaghetti</h5>
 			<p><span style="font-size:30px; cursor:pointer"><button class="open" data-target="A2">See More...</button></span></p>
@@ -63,16 +64,16 @@
 	</div>
 	
 	<div class="col-md-3">
-		<div class="card">
-			<img src="<?php echo base_url('bootstrap/img/cat/lambcurry.png'); ?>" alt="Lamb Curry" style="width:100%">
+		<div class="card" style="height:53%">
+			<img src="<?php echo base_url('bootstrap/img/cat/lambcurry.jpg'); ?>" alt="Lamb Curry" style="width:100%">
 			<h5><br />Home-Style Lamb Curry<br /><br /></h5>
 			<p><span style="font-size:30px; cursor:pointer" class="open" data-target='A3'><button>See More...</button></span></p>
 		</div>
 	</div>
 	
 	<div class="col-md-3">
-		<div class="card">
-			<img src="<?php echo base_url('bootstrap/img/cat/Lasagne.png'); ?>" alt="John" style="width:100%">
+		<div class="card" style="height:53%">
+			<img src="<?php echo base_url('bootstrap/img/cat/Lasagne.jpg'); ?>" alt="John" style="width:100%">
 			<h5><br />Spinach & Courgette Lasagna</h5>
 			<p><span style="font-size:30px; cursor:pointer" class="open" data-target='A4'><button>See More...</button></span></p>
 		</div>
@@ -88,7 +89,7 @@
 		<div class="row">
 				<div class="col-md-4">
 				<h3>Creamy Courgette & Bacon Pasta</h3>
-				<img src="<?php echo base_url('bootstrap/img/cat/courgettebacon.png'); ?>" />
+				<img src="<?php echo base_url('bootstrap/img/cat/courgettebacon.jpg'); ?>" />
 				</div>
 				<div class="col-md-4">
 				<h3>Ingredients</h3>
@@ -97,6 +98,7 @@
 					4 courgettes, coarsely grated
 				<br /> 1 garlic clove, crushed handful freshly grated parmesan
 				<br />1 small tub (200g) low-fat crème fraîche 300g tagliatelle</p>
+				<button class="btn-cart btn btn-danger btn-xs align-center" >Add to Cart</button>
 				</div>
 				<div class="col-md-4">
 				<h3>Procedure</h3>
@@ -106,7 +108,10 @@
 					2.	Cook the tagliatelle according to the pack instructions and scoop out a cupful of cooking water. Drain the tagliatelle and tip into the frying pan with the bacon and courgette. Over a low heat toss everything together with the crème fraiche and half the Parmesan adding a splash of pasta water too if you need to loosen the sauce. Season to taste and serve twirled into bowls with the remaining Parmesan scattered over.
 				</p>
 
-				<button class="btn-cart btn btn-danger btn-xs align-center" >Add to Cart</button>
+				
+				<!-- <form> -->
+				<!-- <input type=button value="Print Me!" onClick="javascript:window.print()" class="btn-cart btn btn-danger btn-xs align-center"></input> -->
+				<!-- </form> -->
 				</div>
 				
 			</div>
@@ -122,7 +127,7 @@
 	<div class="row">
 			<div class="col-md-4">
 			<h3>Marmite & Pancetta Spaghetti</h3>
-			<img src="<?php echo base_url('bootstrap/img/cat/courgettebacon.png'); ?>" />
+			<img src="<?php echo base_url('bootstrap/img/cat/marmitespag.jpg'); ?>" />
 			</div>
 			<div class="col-md-4">
 			<h3>Ingredients</h3>
@@ -135,6 +140,7 @@
 			<br /> 50g cheddar, grated
 			<br /> 50g cheddar, grated parmesan, to serve
 			</p>
+						<button class="btn-cart btn btn-danger btn-xs align-center" >Add to Cart</button>
 			</div>
 			<div class="col-md-4">
 			<h3>Procedure</h3>
@@ -144,7 +150,7 @@
 2.	Once the pasta is cooked, drain, reserving a little pasta water. Tip the spaghetti back into the pan with the pasta water and add the pancetta with the fat from the pan, the butter, Marmite and cheeses. Use tongs to coat the spaghetti in the sauce and season with a little pepper. Taste and add a little more Marmite , if you like. Serve in bowls with extra Parmesan sprinkled over.
 			</p>
 
-			<button class="btn-cart btn btn-danger btn-xs align-center" >Add to Cart</button>
+
 			</div>
 		</div>
 		</p>
@@ -158,7 +164,7 @@
 	<div class="row">
 			<div class="col-md-4">
 			<h3>Home-Style Lamb Curry</h3>
-			<img src="<?php echo base_url('bootstrap/img/cat/lambcurry.png'); ?>" />
+			<img src="<?php echo base_url('bootstrap/img/cat/lambcurry.jpg'); ?>" />
 			</div>
 			<div class="col-md-4">
 			<h3>Ingredients</h3>
@@ -178,6 +184,7 @@
 			<br />small bunch coriander, stalks finely chopped, leaves roughly chopped
 			<br />basmati rice and mango chutney or raita, to serve
 			</p>
+			<button class="btn-cart btn btn-danger btn-xs align-center" >Add to Cart</button>
 			</div>
 			<div class="col-md-4">
 			<h3>Procedure</h3>
@@ -190,7 +197,7 @@
 
 </p>
 
-			<button class="btn-cart btn btn-danger btn-xs align-center" >Add to Cart</button>
+			
 			</div>
 		</div>
 		</p>
@@ -204,7 +211,7 @@
 	<div class="row">
 			<div class="col-md-4">
 			<h3>Spinach & courgette lasagna</h3>
-			<img src="<?php echo base_url('bootstrap/img/cat/Lasagne.png'); ?>" />
+			<img src="<?php echo base_url('bootstrap/img/cat/Lasagne.jpg'); ?>" />
 			</div>
 			<div class="col-md-4">
 			<h3>Ingredients</h3>
@@ -218,6 +225,7 @@
 			<br />100ml double cream
 			<br />3 large courgettes, sliced lengthways
 			</p>
+			<button class="btn-cart btn btn-danger btn-xs align-center" >Add to Cart</button>
 			</div>
 			<div class="col-md-4">
 			<h3>Procedure</h3>
@@ -229,7 +237,6 @@
 
 </p>
 
-			<button class="btn-cart btn btn-danger btn-xs align-center" >Add to Cart</button>
 			</div>
 		</div>
 		</p>
@@ -245,16 +252,16 @@
 	</div>
 
 	<div class="col-md-3">
-		<div class="card">
-			<img src="<?php echo base_url('bootstrap/img/cat/parmesanpotatosalad.png'); ?>" alt="Lemon-Caper Parmesan Potato Salad Bites" style="width:100%">
+		<div class="card" style="height:53%">
+			<img src="<?php echo base_url('bootstrap/img/cat/parmesanpotatosalad.jpg'); ?>" alt="Lemon-Caper Parmesan Potato Salad Bites" style="width:100%">
 			<h5><br />Lemon-Caper Parmesan Potato Salad Bites</h5>
 			<p><span style="font-size:30px; cursor:pointer" class="open" data-target="B1"><button >See More...</button></span></p>
 		</div>
 	</div>
 	
 	<div class="col-md-3">
-		<div class="card">
-			<img src="<?php echo base_url('bootstrap/img/cat/bacontomatobites.png'); ?>" alt="Bacon Endive Tomato Bites" style="width:100%">
+		<div class="card" style="height:53%">
+			<img src="<?php echo base_url('bootstrap/img/cat/bacontomatobites.jpg'); ?>" alt="Bacon Endive Tomato Bites" style="width:100%">
 
 			<h5><br />Bacon Endive Tomato Bites</h5>
 			<p><span style="font-size:30px; cursor:pointer"><button class="open" data-target="B2">See More...</button></span></p>
@@ -262,16 +269,16 @@
 	</div>
 	
 	<div class="col-md-3">
-		<div class="card">
-			<img src="<?php echo base_url('bootstrap/img/cat/Mini Corn Dogs with Cranberry Mustard.png'); ?>" alt="Mini Corn Dogs with Cranberry Mustard" style="width:100%">
+		<div class="card" style="height:53%">
+			<img src="<?php echo base_url('bootstrap/img/cat/Mini Corn Dogs with Cranberry Mustard.jpg'); ?>" alt="Mini Corn Dogs with Cranberry Mustard" style="width:100%">
 			<h5><br />Mini Corn Dogs with Cranberry Mustard<br /></h5>
 			<p><span style="font-size:30px; cursor:pointer" class="open" data-target='B3'><button>See More...</button></span></p>
 		</div>
 	</div>
 	
 	<div class="col-md-3">
-		<div class="card">
-			<img src="<?php echo base_url('bootstrap/img/cat/Strawberry Bruschetta.png'); ?>" alt="Strawberry Bruschetta" style="width:100%">
+		<div class="card" style="height:53%">
+			<img src="<?php echo base_url('bootstrap/img/cat/Strawberry Bruschetta.jpg'); ?>" alt="Strawberry Bruschetta" style="width:100%">
 			<h5><br />Strawberry Bruschetta</h5>
 			<p><span style="font-size:30px; cursor:pointer" class="open" data-target='B4'><button>See More...</button></span></p>
 		</div>
@@ -287,7 +294,7 @@
 		<div class="row">
 				<div class="col-md-4">
 				<h3>Lemon-Caper Parmesan Potato Salad Bites</h3>
-				<img src="<?php echo base_url('bootstrap/img/cat/parmesanpotatosalad.png'); ?>" />
+				<img src="<?php echo base_url('bootstrap/img/cat/parmesanpotatosalad.jpg'); ?>" />
 				</div>
 				<div class="col-md-4">
 				<h3>Ingredients</h3>
@@ -302,6 +309,7 @@
 <br />1/2 teaspoon freshly ground black pepper
 <br />2 tablespoons grated Parmesan cheese
 </p>
+<button class="btn-cart btn btn-danger btn-xs align-center" >Add to Cart</button>
 				</div>
 				<div class="col-md-4">
 				<h3>Procedure</h3>
@@ -314,7 +322,6 @@
 
 				</p>
 
-				<button class="btn-cart btn btn-danger btn-xs align-center" >Add to Cart</button>
 				</div>
 				
 			</div>
@@ -330,7 +337,7 @@
 	<div class="row">
 			<div class="col-md-4">
 			<h3>Bacon Endive Tomato Bites</h3>
-			<img src="<?php echo base_url('bootstrap/img/cat/bacontomatobites.png'); ?>" />
+			<img src="<?php echo base_url('bootstrap/img/cat/bacontomatobites.jpg'); ?>" />
 			</div>
 			<div class="col-md-4">
 			<h3>Ingredients</h3>
@@ -345,6 +352,7 @@
 			<br />16 Belgian endive leaves (about 2 heads)
 			<br />2 center-cut bacon slices, cooked and crumbled
 			</p>
+			<button class="btn-cart btn btn-danger btn-xs align-center" >Add to Cart</button>
 			</div>
 			<div class="col-md-4">
 			<h3>Procedure</h3>
@@ -352,7 +360,6 @@
 1.	Combine first 7 ingredients in a medium bowl. Spoon 1 tablespoon tomato mixture in center of each endive leaf; sprinkle evenly with bacon.
 			</p>
 
-			<button class="btn-cart btn btn-danger btn-xs align-center" >Add to Cart</button>
 			</div>
 		</div>
 		</p>
@@ -366,7 +373,7 @@
 	<div class="row">
 			<div class="col-md-4">
 			<h3>Mini Corn Dogs with Cranberry Mustard</h3>
-			<img src="<?php echo base_url('bootstrap/img/cat/Mini Corn Dogs with Cranberry Mustard.png'); ?>" />
+			<img src="<?php echo base_url('bootstrap/img/cat/Mini Corn Dogs with Cranberry Mustard.jpg'); ?>" />
 			</div>
 			<div class="col-md-4">
 			<h3>Ingredients</h3>
@@ -387,6 +394,7 @@
 			<br />Cranberry Mustard (recipe follows) 
 
 			</p>
+			<button class="btn-cart btn btn-danger btn-xs align-center" >Add to Cart</button>
 			</div>
 			<div class="col-md-4">
 			<h3>Procedure</h3>
@@ -400,7 +408,6 @@
 
 </p>
 
-			<button class="btn-cart btn btn-danger btn-xs align-center" >Add to Cart</button>
 			</div>
 		</div>
 		</p>
@@ -414,7 +421,7 @@
 	<div class="row">
 			<div class="col-md-4">
 			<h3>Strawberry Bruschetta</h3>
-			<img src="<?php echo base_url('bootstrap/img/cat/Strawberry Bruschetta.png'); ?>" />
+			<img src="<?php echo base_url('bootstrap/img/cat/Strawberry Bruschetta.jpg'); ?>" />
 			</div>
 			<div class="col-md-4">
 			<h3>Ingredients</h3>
@@ -430,7 +437,7 @@
 			1/4 teaspoon salt
 			<br />1 (12-oz.) French bread baguette
 			<br />1 (10.5-oz.) goat cheese log, softened
-</p>
+</p><button class="btn-cart btn btn-danger btn-xs align-center" >Add to Cart</button>
 			</div>
 			<div class="col-md-4">
 			<h3>Procedure</h3>
@@ -443,7 +450,6 @@
 
 </p>
 
-			<button class="btn-cart btn btn-danger btn-xs align-center" >Add to Cart</button>
 			</div>
 		</div>
 		</p>
@@ -459,16 +465,16 @@
 	</div>
 
 	<div class="col-md-3">
-		<div class="card">
-			<img src="<?php echo base_url('bootstrap/img/cat/caramelpears.png'); ?>" alt="Cardamom Salted Caramel Pears" style="width:100%">
+		<div class="card" style="height:53%">
+			<img src="<?php echo base_url('bootstrap/img/cat/caramelpears.jpg'); ?>" alt="Cardamom Salted Caramel Pears" style="width:100%">
 			<h5><br />Cardamom Salted Caramel Pears</h5>
 			<p><span style="font-size:30px; cursor:pointer" class="open" data-target="C1"><button >See More...</button></span></p>
 		</div>
 	</div>
 	
 	<div class="col-md-3">
-		<div class="card">
-			<img src="<?php echo base_url('bootstrap/img/cat/yogurtpistacio.png'); ?>" alt="Easy Yogurt, Honey and Pistachio Popsicles" style="width:100%">
+		<div class="card" style="height:53%">
+			<img src="<?php echo base_url('bootstrap/img/cat/yogurtpistacio.jpg'); ?>" alt="Easy Yogurt, Honey and Pistachio Popsicles" style="width:100%">
 
 			<h5><br />Easy Yogurt, Honey and Pistachio Popsicles</h5>
 			<p><span style="font-size:30px; cursor:pointer"><button class="open" data-target="C2">See More...</button></span></p>
@@ -476,16 +482,16 @@
 	</div>
 	
 	<div class="col-md-3">
-		<div class="card">
-			<img src="<?php echo base_url('bootstrap/img/cat/Lgeimat.png'); ?>" alt="Lgeimat (Saffron and Cardamom Fritters)" style="width:100%">
+		<div class="card" style="height:53%">
+			<img src="<?php echo base_url('bootstrap/img/cat/Lgeimat.jpg'); ?>" alt="Lgeimat (Saffron and Cardamom Fritters)" style="width:100%">
 			<h5><br />Lgeimat (Saffron and Cardamom Fritters)<br /></h5>
 			<p><span style="font-size:30px; cursor:pointer" class="open" data-target='C3'><button>See More...</button></span></p>
 		</div>
 	</div>
 	
 	<div class="col-md-3">
-		<div class="card">
-			<img src="<?php echo base_url('bootstrap/img/cat/Mexican Chocolate Ice Cream.png'); ?>" alt="Mexican Chocolate Ice Cream"  style="width:100%">
+		<div class="card" style="height:53%">
+			<img src="<?php echo base_url('bootstrap/img/cat/Mexican Chocolate Ice Cream.jpg'); ?>" alt="Mexican Chocolate Ice Cream"  style="width:100%">
 			<h5><br />Mexican Chocolate Ice Cream </h5>
 			<p><span style="font-size:30px; cursor:pointer" class="open" data-target='C4'><button>See More...</button></span></p>
 		</div>
@@ -501,7 +507,7 @@
 		<div class="row">
 				<div class="col-md-4">
 				<h3>Cardamom Salted Caramel Pears</h3>
-				<img src="<?php echo base_url('bootstrap/img/cat/caramelpears.png'); ?>" />
+				<img src="<?php echo base_url('bootstrap/img/cat/caramelpears.jpg'); ?>" />
 				</div>
 				<div class="col-md-4">
 				<h3>Ingredients</h3>
@@ -512,7 +518,7 @@
 <br />Sea salt to taste
 <br />4 pears, washed and cored
 
-</p>
+</p><button class="btn-cart btn btn-danger btn-xs align-center" >Add to Cart</button>
 				</div>
 				<div class="col-md-4">
 				<h3>Procedure</h3>
@@ -525,7 +531,6 @@
 
 				</p>
 
-				<button class="btn-cart btn btn-danger btn-xs align-center" >Add to Cart</button>
 				</div>
 				
 			</div>
@@ -541,7 +546,7 @@
 	<div class="row">
 			<div class="col-md-4">
 			<h3>Easy Yogurt, Honey and Pistachio Popsicles</h3>
-			<img src="<?php echo base_url('bootstrap/img/cat/yogurtpistacio.png'); ?>" />
+			<img src="<?php echo base_url('bootstrap/img/cat/yogurtpistacio.jpg.jpg'); ?>" />
 			</div>
 			<div class="col-md-4">
 			<h3>Ingredients</h3>
@@ -550,7 +555,7 @@
 <br />1/4 Cup shelled pistachios
 <br />1/4 Teaspoon salt
 
-			</p>
+			</p><button class="btn-cart btn btn-danger btn-xs align-center" >Add to Cart</button>
 			</div>
 			<div class="col-md-4">
 			<h3>Procedure</h3>
@@ -561,7 +566,6 @@
 4.	To remove the popsicles from the mold, dip the mold into hot water until the pops loosen. You can also run hot water over the sides of the mold but be careful not to get any water over the top.
 			</p>
 
-			<button class="btn-cart btn btn-danger btn-xs align-center" >Add to Cart</button>
 			</div>
 		</div>
 		</p>
@@ -575,7 +579,7 @@
 	<div class="row">
 			<div class="col-md-4">
 			<h3>Lgeimat (Saffron and Cardamom Fritters)</h3>
-			<img src="<?php echo base_url('bootstrap/img/cat/Lgeimat.png'); ?>" />
+			<img src="<?php echo base_url('bootstrap/img/cat/Lgeimat.jpg'); ?>"/>
 			</div>
 			<div class="col-md-4">
 			<h3>Ingredients</h3>
@@ -600,7 +604,7 @@
 <br />Pinch of salt
 
 
-			</p>
+			</p><button class="btn-cart btn btn-danger btn-xs align-center" >Add to Cart</button>
 			</div>
 			<div class="col-md-4">
 			<h3>Procedure</h3>
@@ -615,7 +619,6 @@
 
 </p>
 
-			<button class="btn-cart btn btn-danger btn-xs align-center" >Add to Cart</button>
 			</div>
 		</div>
 		</p>
@@ -629,7 +632,7 @@
 	<div class="row">
 			<div class="col-md-4">
 			<h3>Mexican Chocolate Ice Cream</h3>
-			<img src="<?php echo base_url('bootstrap/img/cat/Mexican Chocolate Ice Cream.png'); ?>" />
+			<img src="<?php echo base_url('bootstrap/img/cat/Mexican Chocolate Ice Cream.jpg'); ?>" />
 			</div>
 			<div class="col-md-4">
 			<h3>Ingredients</h3>
@@ -643,7 +646,7 @@
 <br />1/2 cup sugar
 <br />1/4 teaspoon salt
 
-</p>
+</p><button class="btn-cart btn btn-danger btn-xs align-center" >Add to Cart</button>
 			</div>
 			<div class="col-md-4">
 			<h3>Procedure</h3>
@@ -657,7 +660,6 @@
 
 </p>
 
-			<button class="btn-cart btn btn-danger btn-xs align-center" >Add to Cart</button>
 			</div>
 		</div>
 		</p>
@@ -666,83 +668,78 @@
 <div class="overlay2"></div>
 </div>
   
-</div>
+
 
 <div id="Smoothies" class="tabcontent">
-  
-   
+ 
   <div class="col-md-12">
  <h3>Smoothies</h3>
 	</div>
 
 	<div class="col-md-3">
-		<div class="card">
-			<img src="<?php echo base_url('bootstrap/img/cat/caramelpears.png'); ?>" alt="Cardamom Salted Caramel Pears" style="width:100%">
-			<h5><br />Cardamom Salted Caramel Pears</h5>
-			<p><span style="font-size:30px; cursor:pointer" class="open" data-target="C1"><button >See More...</button></span></p>
+		<div class="card" style="height:55%">
+			<img src="<?php echo base_url('bootstrap/img/cat/Avocado, Blueberry, Banana....jpg'); ?>" alt="Avocado, Blueberry, Banana, and Chia Smoothie" style="width:100%">
+			<h5><br />Avocado, Blueberry, Banana, and Chia Smoothie</h5>
+			<p><span style="font-size:30px; cursor:pointer" class="open" data-target="D1"><button >See More...</button></span></p>
 		</div>
 	</div>
 	
 	<div class="col-md-3">
-		<div class="card">
-			<img src="<?php echo base_url('bootstrap/img/cat/yogurtpistacio.png'); ?>" alt="Easy Yogurt, Honey and Pistachio Popsicles" style="width:100%">
-
-			<h5><br />Easy Yogurt, Honey and Pistachio Popsicles</h5>
-			<p><span style="font-size:30px; cursor:pointer"><button class="open" data-target="C2">See More...</button></span></p>
+		<div class="card" style="height:55%">
+			<img src="<?php echo base_url('bootstrap/img/cat/Heavenly Blueberry Smoothie.jpg'); ?>" alt="Heavenly Blueberry Smoothie" style="width:100%">
+			<h5><br />Heavenly Blueberry Smoothie<br /><br /></h5>
+			<p><span style="font-size:30px; cursor:pointer"><button class="open" data-target="D2">See More...</button></span></p>
 		</div>
 	</div>
 	
 	<div class="col-md-3">
-		<div class="card">
-			<img src="<?php echo base_url('bootstrap/img/cat/Lgeimat.png'); ?>" alt="Lgeimat (Saffron and Cardamom Fritters)" style="width:100%">
-			<h5><br />Lgeimat (Saffron and Cardamom Fritters)<br /></h5>
-			<p><span style="font-size:30px; cursor:pointer" class="open" data-target='C3'><button>See More...</button></span></p>
+		<div class="card" style="height:55%">
+			<img src="<?php echo base_url('bootstrap/img/cat/Easy Mango Banana Smoothie.jpg'); ?>" alt="Easy Mango Banana Smoothie" style="width:100%">
+			<h5><br />Easy Mango Banana Smoothie<br /><br /></h5>
+			<p><span style="font-size:30px; cursor:pointer" class="open" data-target='D3'><button>See More...</button></span></p>
 		</div>
 	</div>
 	
 	<div class="col-md-3">
-		<div class="card">
-			<img src="<?php echo base_url('bootstrap/img/cat/Mexican Chocolate Ice Cream.png'); ?>" alt="Mexican Chocolate Ice Cream"  style="width:100%">
-			<h5><br />Mexican Chocolate Ice Cream </h5>
-			<p><span style="font-size:30px; cursor:pointer" class="open" data-target='C4'><button>See More...</button></span></p>
+		<div class="card" style="height:55%">
+		
+			<img src="<?php echo base_url('bootstrap/img/cat/Mongolian Strawberry-Orange Juice Smoothie.jpg'); ?>" alt="Mongolian Strawberry-Orange Juice Smoothie"  style="width:100%">
+			<h5><br />Mongolian Strawberry-Orange Juice Smoothie<br /> </h5>
+			<p><span style="font-size:30px; cursor:pointer" class="open" data-target='D4'><button>See More...</button></span></p>
 		</div>
 		
 	</div>
 
 	
-	<div class="container2 C1">
+	<div class="container2 D1">
 		<p>
 		<a class="close">Close</a>	
 		</p>
 		<p class="changeText">
 		<div class="row">
 				<div class="col-md-4">
-				<h3>Cardamom Salted Caramel Pears</h3>
-				<img src="<?php echo base_url('bootstrap/img/cat/caramelpears.png'); ?>" />
+				<h3>Avocado, Blueberry, Banana, and Chia Smoothie</h3>
+				<img src="<?php echo base_url('bootstrap/img/cat/Avocado, Blueberry, Banana...,.jpg'); ?>" />
 				</div>
 				<div class="col-md-4">
 				<h3>Ingredients</h3>
-				<p> 1 cup sugar
-<br />1 1/4 cups heavy cream, at room temperature or slightly warmed up
-<br />1 tablespoon unsalted butter
-<br />1/2 teaspoon ground cardamom
-<br />Sea salt to taste
-<br />4 pears, washed and cored
+				<p> 1 cup vanilla-flavored almond milk
+<br />1 avocado - peeled, pitted, and halved
+<br />1 cup fresh blueberries
+<br />1 banana
+<br />1 cup ice
+<br />1 tablespoon chia seeds
 
-</p>
+
+</p><button class="btn-cart btn btn-danger btn-xs align-center" >Add to Cart</button>
 				</div>
 				<div class="col-md-4">
 				<h3>Procedure</h3>
 				<p>
-				1.	Add the cup of sugar to a heavy bottom pot and heat on low until it melts and starts to lightly brown. Try to resist stirring it, as this will make it more likely to form lumps. Do not leave it unattended because it can burn quickly.<br />
-				2.	Once the sugar is bubbling and a very light golden brown, pour in the heavy cream. Note that the mixture will bubble up. Begin stirring it until the cream is fully incorporated and then stir in the butter. You may find that the mixture has hard lumps. Just continue stirring, on very low heat, until they melt and you have a smooth sauce.<br />
-				3.	Stir in the cardamom and season with sea salt to taste.<br />
-				4.	Wash and dry the pears. Use a corer to remove the seeds from the bottom of the pear. Using the stem, dip the pear into the warm caramel sauce until fully coated. Place on a rack to catch the drips and allow to harden. If you have any leftover caramel sauce, store it in a lidded jar in the refrigerator for up to a week.
-
+				1.	1.	Combine almond milk, avocado, blueberries, banana, ice, and chia seeds in a blender; blend until smooth.
 
 				</p>
 
-				<button class="btn-cart btn btn-danger btn-xs align-center" >Add to Cart</button>
 				</div>
 				
 			</div>
@@ -750,95 +747,73 @@
 	</div>
 		
 	
-	<div class="container2 C2">
+	<div class="container2 D2">
 	<p>
 	<a class="close">close</a>	
 	</p>
 	<p class="changeText">
 	<div class="row">
 			<div class="col-md-4">
-			<h3>Easy Yogurt, Honey and Pistachio Popsicles</h3>
-			<img src="<?php echo base_url('bootstrap/img/cat/yogurtpistacio.png'); ?>" />
+			<h3>Heavenly Blueberry Smoothie</h3>
+			<img src="<?php echo base_url('bootstrap/img/cat/Heaven Blueberry Smoothie.jpg'); ?>" />
 			</div>
 			<div class="col-md-4">
 			<h3>Ingredients</h3>
-			<p>2 Cups plain, full fat, Greek style yogurt
-<br />1/4 Cup honey
-<br />1/4 Cup shelled pistachios
-<br />1/4 Teaspoon salt
+			<p>1 frozen banana, thawed for 10 to 15 minutes
+<br />1/2 cup vanilla soy milk
+<br />1 cup vanilla fat-free yogurt
+<br />1 1/2 teaspoons flax seed meal
+<br />1 1/2 teaspoons honey
+<br />2/3 cup frozen blueberries
 
-			</p>
+
+			</p><button class="btn-cart btn btn-danger btn-xs align-center" >Add to Cart</button>
 			</div>
 			<div class="col-md-4">
 			<h3>Procedure</h3>
 			<p>
-1.	Add to shelled pistachios to a food processor and pulse until the nuts are in tiny pieces, almost dust, but not pureed.<br />
-2.	Combine the Greek style yogurt with the honey and salt and mix thoroughly. Fold in the ground up pistachios.<br />
-3.	Pour the mixture into a silicone popsicle mold (recipe will fill a 10 pop mold) and place in the freezer for about one hour. Remove from the freezer, insert popsicle sticks into the center of each mold and return to the freezer for at least another 7 hours or overnight.<br />
-4.	To remove the popsicles from the mold, dip the mold into hot water until the pops loosen. You can also run hot water over the sides of the mold but be careful not to get any water over the top.
+1.	Cut banana into small pieces and place into the bowl of a blender. Add the soy milk, yogurt, flax seed meal, and honey. Blend on lowest speed until smooth, about 5 seconds. Gradually add the blueberries while continuing to blend on low. Once the blueberries have been incorporated, increase speed, and blend to desired consistency.
 			</p>
 
-			<button class="btn-cart btn btn-danger btn-xs align-center" >Add to Cart</button>
 			</div>
 		</div>
 		</p>
 		</div>
 
-			<div class="container2 C3">
+			<div class="container2 D3">
 	<p>
 	<a class="close">close</a>	
 	</p>
 	<p class="changeText">
 	<div class="row">
 			<div class="col-md-4">
-			<h3>Lgeimat (Saffron and Cardamom Fritters)</h3>
-			<img src="<?php echo base_url('bootstrap/img/cat/Lgeimat.png'); ?>" />
+			<h3>Easy Mango Banana Smoothie</h3>
+			<img src="<?php echo base_url('bootstrap/img/cat/Easy Mango Banana Smoothie.jpg'); ?>" />
 			</div>
 			<div class="col-md-4">
 			<h3>Ingredients</h3>
-			<p>
-			For the Fritters:
-<br />2 cups all purpose flour
-<br />1 tablespoon baking powder
-<br />1 teaspoon baking soda
-<br />1 teaspoon salt
-<br />1 tablespoon sugar
-<br />1 cup full-fat yogurt (Greek-style)
-<br />1 egg
-<br />4 cups canola oil for frying (or enough to measure a depth of 2 inches)
-<br />Strips of lemon rind for garnish
-<br />For the Syrup:
-<br />1 cup sugar
-<br />1/2 cup water
-<br />1 tablespoon lemon juice
-<br />1/2 teaspoon cardamom
-<br />1/2 teaspoon cinnamon
-<br />1 teaspoon saffron
-<br />Pinch of salt
+			<p>2 mangos - peeled, seeded, and sliced
+<br />2 bananas
+<br />2 cups vanilla yogurt
+<br />2 cups milk
 
 
-			</p>
+
+			</p><button class="btn-cart btn btn-danger btn-xs align-center" >Add to Cart</button>
 			</div>
 			<div class="col-md-4">
 			<h3>Procedure</h3>
 			<p>
 
-1. To make the syrup, add the sugar, water, lemon juice, cardamom, cinnamon, saffron and pinch of salt to a large pot. Bring to a simmer and stir until the sugar dissolves. Allow to sit while you make the fritters.<br />
-2. In a large bowl, sift together the all-purpose flour, baking soda, baking powder, salt, and sugar. In a separate bowl, whisk together the egg and Greek yogurt. Pour the wet ingredients into the dry and mix until dough forms.<br />
-3. Allow to rest for about 10 minutes.<br />
-4. In a large pot, heat the oil to 350 degrees. Using a tablespoon or cookie scoop (anywhere from 1/2 oz. to 1 oz. depending on what you have), scoop the dough into the hot oil. Work in batches so as not to overcrowd the pot. Stir the fritters around so that they get browned on all sides. Total frying time for each batch should be about 2 to 3 minutes. When they're browned, drain them on a paper towel.<br />
-5. Once all are fried, move them to a bowl, pour the syrup over them and top with the strips (or zest) of the lemon rind. Serve immediately.
- 
-
+1. 	Blend mangos, banana, vanilla yogurt, and milk in a blender until smooth.
 </p>
 
-			<button class="btn-cart btn btn-danger btn-xs align-center" >Add to Cart</button>
 			</div>
 		</div>
 		</p>
 		</div>
 	
-	<div class="container2 C4">
+	<div class="container2 D4">
 	<p>
 	<a class="close">close</a>	
 	</p>
@@ -846,35 +821,27 @@
 	<div class="row">
 			<div class="col-md-4">
 			<h3>Mexican Chocolate Ice Cream</h3>
-			<img src="<?php echo base_url('bootstrap/img/cat/Mexican Chocolate Ice Cream.png'); ?>" />
+			<img src="<?php echo base_url('bootstrap/img/cat/Mexican Chocolate Ice Cream.jpg'); ?>" />
 			</div>
 			<div class="col-md-4">
 			<h3>Ingredients</h3>
-			<p>1/2 vanilla bean
-<br />2 cups heavy cream
-<br />2 cups whole milk
-<br />9 ounces Mexican chocolate (such as Ibarra; see Notes), coarsely chopped
-<br />2 ounces unsweetened chocolate, coarsely chopped
-<br />2 cinnamon sticks
-<br />5 egg yolks
-<br />1/2 cup sugar
-<br />1/4 teaspoon salt
+			<p>1 cup chopped fresh strawberries
+<br />1 cup orange juice
+<br />10 cubes ice
+<br />1 tablespoon sugar
 
-</p>
+
+</p><button class="btn-cart btn btn-danger btn-xs align-center" >Add to Cart</button>
 			</div>
 			<div class="col-md-4">
 			<h3>Procedure</h3>
 			<p>
 
-1. Split vanilla bean lengthwise and scrape out seeds. In a 4-qt. saucepan over medium heat, bring cream, milk, Mexican chocolate, unsweetened chocolate, cinnamon sticks, and vanilla seeds and pod to a simmer.<br />
-2. Remove cream mixture from heat and let steep 20 minutes. Meanwhile, put egg yolks, sugar, and salt in the bowl of a standing mixer and whisk at medium-high speed until egg mixture is thick and pale yellow, 2 to 3 minutes.<br />
-3. Return cream mixture to medium heat and bring just to a simmer. Remove from heat and pour through a strainer into a clean bowl; discard cinnamon sticks and vanilla pod. With mixer running on medium speed, pour 1/2 cup cream mixture into egg mixture. Slowly drizzle in remaining cream mixture, continuing to mix as you go.<br />
-4. Pour this custard into saucepan. Return to stove and cook over low to medium-low heat, stirring with a wooden spoon, until custard thickens a bit and reaches 170° on a thermometer.
+1.	In a blender, combine strawberries, orange juice, ice cubes and sugar. Blend until smooth. Pour into glasses and serve.
 
 
 </p>
 
-			<button class="btn-cart btn btn-danger btn-xs align-center" >Add to Cart</button>
 			</div>
 		</div>
 		</p>
@@ -888,3 +855,6 @@
 
 
 </section>		
+
+	
+

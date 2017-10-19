@@ -55,6 +55,8 @@
         <li id="navBrand"><a href="<?php echo base_url('Mainpage/listRecipe/'); ?>"><i class="glyphicon glyphicon-list-alt"></i>  Recipe</a></li>        
 
         <li id="navCategories"><a href="<?php echo base_url('Mainpage/Category'); ?>"> <i class="glyphicon glyphicon-th-list"></i> Category</a></li>   
+		
+		<li id="navCategories"><a href="<?php echo base_url('Mainpage/listOrders'); ?>"> <i class="glyphicon glyphicon-th-list"></i> List of Orders</a></li>  
 
         <li class="dropdown" id="navOrder">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <i class="glyphicon glyphicon-shopping-cart"></i> Orders <span class="caret"></span></a>

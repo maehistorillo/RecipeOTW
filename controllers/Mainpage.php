@@ -8,6 +8,7 @@ class Mainpage extends CI_Controller {
 		$this->load->helper('url');
 		$this->load->model('users_model','user');
 		$this->load->model('recipes_model','recipe');
+		$this->load->model('orders_model','order');
 		//$this->load->library('sessions');
 	}
 	
@@ -19,11 +20,12 @@ class Mainpage extends CI_Controller {
 	
 	public function Home(){
 		$data['title'] = "Recipe OTW";
-		$data['username'] = $this->session->userdata('username');
-		$data['usercred'] = $this->user->authority($this->session->userdata('username'));
+		$data['email'] = $this->session->userdata('email');
 		
+		$data['usercred'] = $this->user->authority($this->session->userdata('email'));
+		$data['firstname'] = $this->user->authority1($this->session->userdata('email'));
 		$this->load->view('include/header',$data);
-		$this->load->view('mainpage/homepage');
+		$this->load->view('mainpage/homepage',$data);
 		$this->load->view('include/footer');
 		
 	}
@@ -31,9 +33,32 @@ class Mainpage extends CI_Controller {
 		public function Etc(){
 		$data['title'] = "Recipe OTW";
 		
-		$this->load->view('include/etc');
-		$this->load->view('mainpage/homeetchead');
-		$this->load->view('mainpage/homeetcfoot');
+		$this->load->view('script');
+		$this->load->view('mainpage/recipe_page');
+		//$this->load->view('mainpage/homeetcfoot');
+	}
+	
+	public function Categories(){
+		$data['ship'] = $this->session->userdata('email');
+		$data['bill'] = $this->cart->total();
+		$this->session->set_userdata(array('ref' => substr(md5(rand().$this->session->userdata('email').$this->cart->total_items().$this->cart->total()), 0, 10)));
+		$data['ref'] = $this->session->userdata('ref');
+		$data['recipename'] = $this->recipe->categorize('recipename');
+		$this->load->view('categorize',$data);
+	}
+	
+	public function Checkout(){
+		
+		$data['bill'] = $this->cart->total();
+		$this->load->view('checkout',$data);
+		$this->load->view('include/header');
+	}
+	
+	public function Endcheckout(){
+		$this->user->saveorder($this->user->generateID('order_id','orders'));
+		$data['bill'] = $this->cart->total();
+		$this->load->view('include/header');
+		$this->load->view('checkout',$data);
 	}
 	
 	public function Signup()
@@ -44,7 +69,7 @@ class Mainpage extends CI_Controller {
 	}
 	public function Login()
 	{
-		$enter =  $this->session->userdata('username');
+		$enter =  $this->session->userdata('email');
 		if( !empty($enter) ){
 			 redirect (base_url('Mainpage/Admin/'));
 		}	
@@ -52,6 +77,12 @@ class Mainpage extends CI_Controller {
 		$data['title'] = "Login";			
 		$this->load->view('include/header',$data);
 		$this->load->view('mainpage/login');
+	}
+
+	public function Address()
+	{
+		$this->load->view('mainpage/useraddress');
+		$this->load->view('include/header');
 	}
 
 	public function Recipe()
@@ -63,13 +94,13 @@ class Mainpage extends CI_Controller {
 	public function Admin()
 	{	
 		$data['title'] = 'Hello Admin!';
-	//	$data['re'] = $this->session->userdata('username');
-		if( !empty($this->session->userdata('username')) )
+	//	$data['re'] = $this->session->userdata('email');
+		if( !empty($this->session->userdata('email')) )
 		{
 			if($this->session->userdata('usercred') == 1)
 			{
-			$data['username'] =  $this->session->userdata('username');
-				if( empty($this->session->userdata('username')) ){
+			$data['email'] =  $this->session->userdata('email');
+				if( empty($this->session->userdata('email')) ){
 				 redirect (base_url('Mainpage/Login/'));
 
 			}		
@@ -86,7 +117,8 @@ class Mainpage extends CI_Controller {
 	
 	public function User()
 	{
-		$this->session->set_userdata(array('usercred' => $this->user->authority($this->session->userdata('username'))));
+		$this->session->set_userdata(array('usercred' => $this->user->authority($this->session->userdata('email'))));
+		$this->session->set_userdata(array('firstname' => $this->user->authority1($this->session->userdata('email'))));
 		if($this->session->userdata('usercred') == 1){
 			redirect(base_url('Mainpage/Admin'));
 		}else{
@@ -97,13 +129,14 @@ class Mainpage extends CI_Controller {
 	
 	public function Client()
 	{
-		if( !empty($this->session->userdata('username')) ){
+		if( !empty($this->session->userdata('email')) ){
 			if($this->session->userdata('usercred') == 0){
-				
-				$data['username'] = $this->session->userdata('username');
+				$data['firstname'] = $this->session->userdata('firstname');
+				$data['title'] = 'Welcome!';
 				$data['usercred'] = $this->user->authority('usercred');
 				$data['balance'] = $this->user->bal('balance');
 				$data['recipes'] = $this->recipe->recipelist('recipes');	
+				$this->load->view('include/header',$data);
 				$this->load->view('mainpage/user/userpage',$data);
 			}else{
 				redirect(base_url('Mainpage/Admin'));
@@ -138,7 +171,7 @@ class Mainpage extends CI_Controller {
 
 
 				
-		$username = $this->input->post('username');
+		$email = $this->input->post('email');
 		$email = $this->input->post('email');
 		$password = $this->input->post('password');
 		$balance = $this->input->post('balance');
@@ -151,7 +184,7 @@ class Mainpage extends CI_Controller {
 		$address = $this->input->post('address');
 		$usercred = 0;
 		
-		$flag = $this->user->signup($username,$email,$password,$balance,$surname,$firstname,$miname,$birthdate,$address,$usercred);
+		$flag = $this->user->signup($email,$email,$password,$balance,$surname,$firstname,$miname,$birthdate,$address,$usercred);
 		if($flag){
 			
 			redirect(base_url('Mainpage/Home/'));
@@ -163,13 +196,13 @@ class Mainpage extends CI_Controller {
 	
 	//Login Comparing
 	public function loginAction() {
-		$this->session->set_userdata($this->user->Login($this->input->post('username'), $this->input->post('password')));
+		$this->session->set_userdata($this->user->Login($this->input->post('email'), $this->input->post('password')));
 		
 
 	}	
 			
 	public function adminloginAction() {
-		$this->session->set_userdata($this->user->Adminlogin($this->input->post('username'), $this->input->post('password')));
+		$this->session->set_userdata($this->user->Adminlogin($this->input->post('email'), $this->input->post('password')));
 	}	
 	
 	 public function logout() {
@@ -180,7 +213,7 @@ class Mainpage extends CI_Controller {
 
 	public function insertRecipe() {
 		
-		$enter =  $this->session->userdata('username');
+		$enter =  $this->session->userdata('email');
 		if( empty($enter) ){
 			 redirect (base_url('Mainpage/Login/'));
 		}
@@ -188,8 +221,8 @@ class Mainpage extends CI_Controller {
 			if($this->session->userdata('usercred') == 1)
 			{
 			$data['title'] = "Add New Recipe";
-			$data['username'] =  $this->session->userdata('username');
-				if( empty($this->session->userdata('username')) ){
+			$data['email'] =  $this->session->userdata('email');
+				if( empty($this->session->userdata('email')) ){
 				 redirect (base_url('Mainpage/Login/'));
 			}		
 			$this->load->view('include/header', $data);
@@ -204,19 +237,21 @@ class Mainpage extends CI_Controller {
 	
 	public function submitRecipe() {
 		
+		$recipeb = $this->input->post('recipename');
+		$recipeid = str_replace('%20', ' ',$recipeb);
 		$recipename = $this->input->post('recipename');
 		$recipecat = $this->input->post('recipecat');
 		$recipeing = $this->input->post('recipeing');
 		$recipeimg = $this->input->post('recipeimg');
 		$recipecost = $this->input->post('recipecost');
+		$recipequa = $this->input->post('recipequa');
 		$recipeprocedure = $this->input->post('recipeprocedure');
 		
-		$flag = $this->recipe->submit($recipename, $recipecat, $recipeing, $recipeimg, $recipecost, $recipeprocedure);
+		$flag = $this->recipe->submit($recipeid, $recipename, $recipequa, $recipecat, $recipeing, $recipeimg, $recipecost, $recipeprocedure);
 		
 		 if($flag){
 		echo 'Recipe Save!';
 		redirect(base_url('Mainpage/insertRecipe/'));
-
 					
 		}
 		else {
@@ -226,7 +261,7 @@ class Mainpage extends CI_Controller {
 	}
 	
 	public function listRecipe(){
-		$enter =  $this->session->userdata('username');
+		$enter =  $this->session->userdata('email');
 		if( empty($enter) ){
 			 redirect (base_url('Mainpage/Login/'));
 		}
@@ -247,7 +282,7 @@ class Mainpage extends CI_Controller {
 		
 	
 	public function viewUsers(){
-		$enter =  $this->session->userdata('username');
+		$enter =  $this->session->userdata('email');
 		if( empty($enter) ){
 			 redirect (base_url('Mainpage/Login/'));
 		}	
@@ -272,9 +307,60 @@ class Mainpage extends CI_Controller {
 		redirect(base_url('Mainpage/viewUsers'));	
 	}
 	
+	public function addtoCart($id,$name,$qty,$price){
+			$data = array(
+			'id' => $id,
+			'qty' => $qty, 
+			'price' => $price,
+			'name' => $name
+			);
+			$this->cart->insert($data);
+			echo $this->displayCart();		
+	}
+	
+	public function viewCart(){
+			//$data['cart'] = $this->cart->contents();
+			
+			$this->load->view('mainpage/user/cart');
+	}
+	
+	public function displayCart(){
+		$str = '
+		<thead>
+		  <tr><th>Recipe ID</th><th>Recipe</th><th>Price</th><th>Quantity</th><th>Total</th><th>Action</th></tr>
+		</thead>
+		<tbody>';
+		foreach($this->cart->contents() as $items){
+			$str .= '
+		  <tr>        
+		    <td>'.str_replace('_', ' ', str_replace('_00', ')', str_replace('00_', '(', $items['id']))).'</td>
+		    <td>'.str_replace('_', ' ', str_replace('_00', ')', str_replace('00_', '(', $items['name']))).'</td>
+		    <td>'.$items['price'].'</td>
+		    <td>'.$items['qty'].'</td>
+		    <td>'.$items['price'] * $items['qty'].'</td>
+		    <td>
+		      <a href = "'.base_url('Mainpage/removeFromCart/'.$items['rowid']).'">Remove from cart</a>
+		    </td>
+		  </tr>';
+		}
+		$str .= '<tr><td>Total</td><td>'.$this->cart->total().'</td></tr>';
+		return $str.'</tbody>';
+	}
+	
+	public function removeFromCart($rowid){		
+		$this->cart->remove($rowid);
+		redirect(base_url('Mainpage/Client'));
+	}
+	
+	public function emptyCart(){
+		$this->cart->destroy();
+		redirect(base_url('Mainpage/Client'));
+	}
+	
+	
 	public function Setting(){
 		$data['title'] = "Admin Settings";
-		$enter =  $this->session->userdata('username');
+		$enter =  $this->session->userdata('email');
 		if( empty($enter) ){
 			 redirect (base_url('Mainpage/Login/'));
 		}	
@@ -287,6 +373,12 @@ class Mainpage extends CI_Controller {
 				redirect(base_url('Mainpage/User'));
 			}
 		}
+	}
+	
+	public function listOrders(){
+		$data['orders'] = $this->order->orderslist('orders');
+		$this->load->view('include/header');
+		$this->load->view('mainpage/Admin/listorders',$data);
 	}
 	
 	

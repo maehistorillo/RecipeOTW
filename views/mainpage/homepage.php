@@ -46,13 +46,12 @@
             <?php 
 			
 			
-			if(!isset($username)){
+			if(!isset($email)){
 				echo '
 			<div class="collapse navbar-collapse navbar-right navbar-main-collapse">
       <ul class="nav navbar-nav">
         <li><a href="'.base_url('Mainpage/Home/').'">Home</a></li>
-        <li><a href="#recipe">Featured Recipes</a></li>
-		<li><a href="#service">Cuisines</a></li>
+        <li><a href="#frecipe">Featured Recipes</a></li>
 		<li><a href="#aboutus">About Us</a></li>
 		<li><a href="#contact">Reviews</a></li>
         <li class="dropdown">
@@ -70,21 +69,19 @@
 				echo '<div class="collapse navbar-collapse navbar-right navbar-main-collapse">
       <ul class="nav navbar-nav">
         <li><a href="'.base_url('Mainpage/Home/').'">Home</a></li>
-        <li><a href="#recipe">Featured Recipes</a></li>
-		<li><a href="#service">Cuisines</a></li>
+        <li><a href="#frecipe">Featured Recipes</a></li>
 		<li><a href="#aboutus">About Us</a></li>
-		<li><a href="#contact">Reviews</a></li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">Accounts <b class="caret"></b></a>
           <ul class="dropdown-menu">';
 		  if($usercred == 1){
 			  echo'
-            <li><a href="'.base_url('/Mainpage/Admin').'">'.$username.'</a></li>
+            <li><a href="'.base_url('/Mainpage/Admin').'">'.$firstname.'</a></li>
 			';
 		  }
 		  else{
 			  echo'
-			<li><a href="'.base_url('/Mainpage/User').'">'.$username.'</a></li>
+			<li><a href="'.base_url('/Mainpage/User').'">'.$firstname.'</a></li>
 			';
 		  }
 		  echo'
@@ -102,6 +99,9 @@
     </nav>
 
 <!-- Section: intro -->
+   
+
+	<!-- Section: intro -->
     <section id="intro" class="intro">
 	
 		<div class="slogan">
@@ -110,38 +110,31 @@
 			<h4 id="h42">IS THE ANSWER TO YOUR PROBLEM</h4>
 		</div>
 		<div class="page-scroll">
-			<a href="#recipe" class="btn btn-rectangle">
+			<a href="<?php echo base_url('Mainpage/Recipe')?>" class="btn btn-rectangle">
 				Get Started<!--<i class="fa fa-angle-double-down animated"></i>-->
 			</a>
 		</div>
     </section>
-	<!-- /Section: intro -->
-
-	<!-- <!-- Section: Featured Recipe -->
-        <section id="recipe" class="home-section text-center">
+	<!-- /Section: intro -->	
+	
+	<!-- Section: Featured Recipe -->
+    <section id="frecipe" class="home-section text-center">
 		<div class="heading-about">
-			
 			<div class="container"> 
 			<div class="row">
-				
-			
 				<div class="col-lg-8 col-lg-offset-2">
 					<div class="wow bounceInDown" data-wow-delay="0.2s"> 
 					<div class="section-heading"> 
 					<h2>Featured Recipes</h2> 
-					<i class="fa fa-2x fa-angle-down"></i>
 					</div> 
 					</div> 
 				</div>
-				
-				
 			</div>
 			</div>
 		</div>
 		
-		
 		<div id="overlay" >
-			<!-- <div id="text">Overlay Text</div> -->
+		
 			<div class="container2" style="padding-top:50px">
 			<p>
 			<a class="close" onclick="off()">close</a>	
@@ -150,7 +143,7 @@
 		<div class="row">
 			<div class="col-md-4">
 			<h3>Home-Style Lamb Curry</h3>
-			<img src="<?php echo base_url('bootstrap/img/cat/lambcurry.jpg') ?>"" />
+			<img src="<?php echo base_url('bootstrap/img/cat/lambcurry,jpg'); ?>" />
 			</div>
 			<div class="col-md-4">
 			<h3>Ingredients</h3>
@@ -194,172 +187,68 @@
 		<div class="row">
 			
         <div class="row"> 
-            <div class="col-xs-6 col-sm-3 col-md-3"> 
+            
+			<div class="col-xs-6 col-sm-3 col-md-3"> 
 				<div class="wow bounceInUp" data-wow-delay="0.3s"> 
 				<div class="team boxed-grey">	
-
-					<div class="card">
-					  <img src="<?php echo base_url('bootstrap/img/cat/lambcurry.jpg') ?>"" alt="Kare Kare" style="width:100%">
+					<img src="<?php echo base_url('bootstrap/img/cat/lambcurry.jpg'); ?>" alt="Lambcurry" style="width:100%">
 					  <h1>Dish</h1>
 					  <p class="title">Home-Style Lamb Curry<br /><br /></p>
 					  <p><button onclick="on()">View</button></p>
-					</div>
-					
 				</div>
 				</div>
             </div>
 			
 			<div class="col-xs-6 col-sm-3 col-md-3"> 
-			<div class="wow bounceInUp" data-wow-delay="0.5s"> 
-			<div class="team boxed-grey">
-				
-				<div class="card">
-				  <img src="<?php echo base_url('bootstrap/img/cat/parmesanpotatosalad.jpg') ?>"" alt="Spag" style="width:100%">
+				<div class="wow bounceInUp" data-wow-delay="0.5s"> 
+				<div class="team boxed-grey">
+				  <img src="<?php echo base_url('bootstrap/img/cat/parmesanpotatosalad.jpg'); ?>" alt="Spag" style="width:100%">
 				  <h1>Side Dish</h1>
 				  <p class="title">Lemon-Caper Parmesan Potato Salad Bites</p>
 				  <p><button onclick="on()">View</button></p>
-				</div>
-
                 </div> 
 				</div> 
             </div>
 
 			<div class="col-xs-6 col-sm-3 col-md-3"> 
-			
-			<div class="wow bounceInUp" data-wow-delay="0.8s"> 
-			<div class="team boxed-grey">
-				<div class="card">
-				  <img src="<?php echo base_url('bootstrap/img/cat/yogurtpistacio.jpg') ?>"" alt="Burger" style="width:100%">
-				  <h1>Dessert</h1>
-				  <p class="title">Easy Yogurt, Honey And Pistachio Popsicles</p>
-				  <p><button>View</button></p>
-				</div>
-
-                </div> 
+				<div class="wow bounceInUp" data-wow-delay="0.8s"> 
+				<div class="team boxed-grey">
+				<img src="<?php echo base_url('bootstrap/img/cat/yogurtpistacio.jpg'); ?>" alt="Yogurt Pistachio" style="width:100%">
+				<h1>Dessert</h1>
+				<p class="title">Easy Yogurt, Honey And Pistachio Popsicles</p>
+				<p><button>View</button></p>
+				</div> 
 				</div> 
             </div>
 			
-			 <div class="col-xs-6 col-sm-3 col-md-3"> 
-			
-			<div class="wow bounceInUp" data-wow-delay="1s"> 
-			<div class="team boxed-grey">
-				<div class="card">
-				  <img src="<?php echo base_url('bootstrap/img/cat/Heavenly Blueberry Smoothie.jpg') ?>""" alt="Pizza" style="width:100%">
+			<div class="col-xs-6 col-sm-3 col-md-3"> 
+				<div class="wow bounceInUp" data-wow-delay="1s"> 
+				<div class="team boxed-grey">
+				  <img src="<?php echo base_url('bootstrap/img/cat/Heavenly Blueberry Smoothie.jpg'); ?>" alt="Smoothies" style="width:100%">
 				  <h1>Smoothies</h1>
-				  <p class="title">Heavenly Blueberry <br />Smoothie</p>
+				  <p class="title">Heavenly Blueberry<br />Smoothie</p>
 				  <p><button>View</button></p>
-				</div>
-
-                </div> 
+				</div> 
 				</div> 
             </div>
+			
         </div>	
+		
 	<div class="row" >
-
-
         	<div class="col-md-12">
 						<br>
-						<a href="<?php echo base_url('Mainpage/Etc'); ?>" class="btn"><button>View All Categories</button></a>
-        		
+						<p href="<?php echo base_url('Mainpage/Recipe')?>" class="btn"><button>View All Categories</button></p>
 			</div>
-
         </div>		
-		</div> 
+		</div>
+	</div>		
 	</section>
 	<!-- /Section: featureed Recipe -->
 	
 
-	<!-- Section: services -->
-    <section id="service" class="home-section text-center">
-		
-		<div class="heading-about">
-			<div class="container">
-			<div class="row">
-				<div class="col-lg-8 col-lg-offset-2">
-					<div class="wow bounceInDown" data-wow-delay="0.4s">
-					<div class="section-heading">
-					<h2>Categories</h2>
-					<i class="fa fa-2x fa-angle-down"></i>
-
-					</div>
-					</div>
-				</div>
-			</div>
-			</div>
-		</div>
-	
-        <div class="row">
-							
-			<div class="container2">
-				<div class="col-xs-6 col-sm-3 col-md-3">
-					<div class="wow fadeInLeft" data-wow-delay="0.2s">
-						<div class="team boxed-grey">
-							<img src="<?php echo base_url('bootstrap/img/cuisines/african.jpg') ?>"'); ?>" alt="Avatar" class="image" style="width:100%" />
-							<div class="middle">
-								<div class="text">African</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-
-			
-			<div class="container2">
-				<div class="col-xs-6 col-sm-3 col-md-3">
-					<div class="wow fadeInLeft" data-wow-delay="0.4s">
-						<div class="team boxed-grey">
-							<img src="<?php echo base_url('bootstrap/img/cuisines/american.jpg') ?>"'); ?>" alt="Avatar" class="image" style="width:100%" />
-							<div class="middle">
-								<div class="text">American</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			
-			<div class="container2">
-				<div class="col-xs-6 col-sm-3 col-md-3">
-					<div class="wow fadeInLeft" data-wow-delay="0.6s">
-						<div class="team boxed-grey">
-							<img src="<?php echo base_url('bootstrap/img/cuisines/european.jpg') ?>"'); ?>" alt="Avatar" class="image" style="width:100%" />
-							<div class="middle">
-								<div class="text">European</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			
-			<div class="container2">
-				<div class="col-xs-6 col-sm-3 col-md-3">
-					<div class="wow fadeInLeft" data-wow-delay="0.8s">
-						<div class="team boxed-grey">
-							<img src="<?php echo base_url('bootstrap/img/cuisines/filipino.jpg') ?>"'); ?>" alt="Avatar" class="image" style="width:100%" />
-							<div class="middle">
-								<div class="text">Filipino</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-       
-        <div class="row">
-        	<div class="col-md-12">
-						<br>
-						<a href="<?php echo base_URL('Mainpage/Recipe/'); ?>" class="btn btn-primary" > View Categories</a>
-        		
-        	</div>
-
-        </div>
-
-		</div>
-		 </div>
-	</section>
-	
 	<!-- Section: About Us -->
-    <section id="aboutus" class="home-section text-center">
-		
+<section id="aboutus" class="home-section text-center" class="container-fluid col-md-12">
+	<div class="container">	
 		<div class="heading-about">
 			<div class="container">
 			<div class="row">
@@ -367,180 +256,52 @@
 					<div class="wow bounceInDown" data-wow-delay="0.4s">
 					<div class="section-heading">
 					<h2>About Us</h2>
-					<i class="fa fa-2x fa-angle-down"></i>
-
 					</div>
 					</div>
 				</div>
 			</div>
 			</div>
 		</div>
-	
-        <div class="row">
-							
-			<div class="container2" >
-				<div class="col-xs-6 col-sm-3 col-md-3">
-					<div class="wow fadeInLeft" data-wow-delay="0.2s">
-						<div class="team boxed-grey" >
-							<img src="<?php echo base_url('bootstrap/img/cuisines/african.jpg'); ?>" alt="Dishes" class="image" style="width:100%"  />
-							<div class="middle">
-								<a href="<?php echo base_url('Mainpage/Etc'); ?>" ><div class="text">Dishes</div></a>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-
-			
-			<div class="container2">
-				<div class="col-xs-6 col-sm-3 col-md-3">
-					<div class="wow fadeInLeft" data-wow-delay="0.4s">
-						<div class="team boxed-grey">
-							<img src="<?php echo base_url('bootstrap/img/cat/bacontomatobites.jpg'); ?>" alt="Side Dish" class="image" style="width:100%" />
-							<div class="middle">
-								<a href="<?php echo base_url('Mainpage/Etc'); ?>" ><div class="text">Side Dish</div></a>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			
-			<div class="container2">
-				<div class="col-xs-6 col-sm-3 col-md-3">
-					<div class="wow fadeInLeft" data-wow-delay="0.6s">
-						<div class="team boxed-grey">
-							<img src="<?php echo base_url('bootstrap/img/cat/caramelpears.jpg'); ?>" alt="Desserts" class="image" style="width:100%" />
-							<div class="middle">
-								<a href="<?php echo base_url('Mainpage/Etc'); ?>" ><div class="text">Desserts</div></a>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			
-			<div class="container2">
-				<div class="col-xs-6 col-sm-3 col-md-3">
-					<div class="wow fadeInLeft" data-wow-delay="0.8s">
-						<div class="team boxed-grey">
-							<img src="<?php echo base_url('bootstrap/img/cat/Easy Mango Banana Smoothie.jpg'); ?>" alt="Smoothies" class="image" style="width:100%" />
-							<div class="middle">
-								<a href="<?php echo base_url('Mainpage/Etc'); ?>" onclick="openCity('Smoothies')" ><div class="text">Smoothies</div></a>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-       
-       
-
-		</div>
-		 
-		 </div>
-	</section>
-	<!-- /Section: services -->
-
-	
-	
-	<!-- Section: review -->
-    <section id="review" class="home-section text-center">
-		<div class="heading-contact">
-			<div class="container">
-			<div class="row">
-				<div class="col-lg-8 col-lg-offset-2">
-					<div class="wow bounceInDown" data-wow-delay="0.4s">
-					<div class="section-heading">
-					<h2>Get in touch</h2>
-					<i class="fa fa-2x fa-angle-down"></i>
-
-					</div>
-					</div>
-				</div>
-			</div>
-			</div>
-		</div>
-		<div class="container">
-
-		<div class="row">
-			<div class="col-lg-2 col-lg-offset-5">
-				<hr class="marginbot-50">
-			</div>
-		</div>
-    <div class="row">
-        <div class="col-lg-8">
-            <div class="boxed-grey">
-                <form id="contact-form">
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="name">
-                                Name</label>
-                            <input type="text" class="form-control" id="name" placeholder="Enter name" required="required" />
-                        </div>
-                        <div class="form-group">
-                            <label for="email">
-                                Email Address</label>
-                            <div class="input-group">
-                                <span class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span>
-                                </span>
-                                <input type="email" class="form-control" id="email" placeholder="Enter email" required="required" /></div>
-                        </div>
-                        <div class="form-group">
-                            <label for="subject">
-                                Subject</label>
-                            <select id="subject" name="subject" class="form-control" required="required">
-                                <option value="na" selected="">Choose One:</option>
-                                <option value="service">General Customer Service</option>
-                                <option value="suggestions">Suggestions</option>
-                                <option value="product">Product Support</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="name">
-                                Message</label>
-                            <textarea name="message" id="message" class="form-control" rows="9" cols="25" required="required"
-                                placeholder="Message"></textarea>
-                        </div>
-                    </div>
-                    <div class="col-md-12">
-                        <button type="submit" class="btn btn-skin pull-right" id="btnContactUs">
-                            Send Message</button>
-                    </div>
-                </div>
-                </form>
-            </div>
-        </div>
 		
-		<div class="col-lg-4">
-			<div class="widget-contact">
-				<h5>Main Office</h5>
-				
-				<address>
-				  <strong>Squas Design, Inc.</strong><br>
-				  Tower 795 Folsom Ave, Beautiful Suite 600<br>
-				  San Francisco, CA 94107<br>
-				  <abbr title="Phone">P:</abbr> (123) 456-7890
-				</address>
-
-				<address>
-				  <strong>Email</strong><br>
-				  <a href="mailto:#">email.name@example.com</a>
-				</address>	
-				<address>
-				  <strong>We're on social networks</strong><br>
-                       	<ul class="company-social">
-                            <li class="social-facebook"><a href="#" target="_blank"><i class="fa fa-facebook"></i></a></li>
-                            <li class="social-twitter"><a href="#" target="_blank"><i class="fa fa-twitter"></i></a></li>
-                            <li class="social-dribble"><a href="#" target="_blank"><i class="fa fa-dribbble"></i></a></li>
-                            <li class="social-google"><a href="#" target="_blank"><i class="fa fa-google-plus"></i></a></li>
-                        </ul>	
-				</address>					
+		<div class="col-md-12" >
+			<div class="col-md-6">
+			<p><h2>We Share Recipe</h2></p>
+			<h3><p>Recipe On The Way (ROTW) is a recipe site, but it is <br />
+			not	your ordinary recipe site wherein you can   <br />
+			only browse for the ingredients of your  <br />
+			favourite foods and such. Here on ROTW <br />
+			you can browse the Ingredients, Learn the <br />
+			Process	and/or also you can order the  <br />
+			ingredients	of your favorite food.</p></h3>
+			</div>
 			
-			</div>	
+			<img class="col-md-6" src="<?php echo base_url('bootstrap/img/bg1.jpg'); ?>" ></img>
+				</div>
+		<div class="col-md-12" >
+		<br />
+		<br />
 		</div>
-    </div>	
+		<div class="col-md-12" >
+			
+			<img class="col-md-6" src="<?php echo base_url('bootstrap/img/bg1.jpg'); ?>" ></img>
+			<p ><h2 class="col-md-6">We are OnTheWay</h2></p>
+			<h3><p>Busy? No Time to go to the Market?, you can  <br />
+			now order the ingredients of your favorite foods  <br />
+			here on ROTW, we can deliver fresh ingredients <br />
+			of your order in just 30 minutes, and if we are <br />
+			late, your order is free   <br />
+			Isn't it cool? Shop with us now!</h3></p>
+			
+		</div>
+     </div>  
+     
+	
+</section>
+	
+			
+    
+		
+		
 	<script>
 	function on() {
 		document.getElementById("overlay").style.display = "block";

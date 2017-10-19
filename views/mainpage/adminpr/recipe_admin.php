@@ -28,6 +28,8 @@
 							<th>Recipe Name</th>
 							<th></th>
 							<th>Recipe Category</th>
+							<th>Price</th>
+							<th>Quantity</th>
 							<th style="width:15%;">Options</th>
 						</tr>
 					</thead>
@@ -37,6 +39,8 @@
 							<td><?php echo $row['recipename']; ?></td>
 							<td><img src = "<?php echo base_url('image/'.$row['recipeimg'].''); ?>" class="image" style="width:128px;height:128px" /></td>
 							<td><?php echo $row['recipeing']; ?></td>
+							<td><?php echo $row['recipecost'];?></td>
+							<td><?php echo $row['recipequa'];?></td>
 							<td><a href="">View </a> <text> <a>|</a> <a href="">Edit </a> <text>| </text>
 								<a href="<?php echo base_url('Mainpage/delRecipe/'.$row['recipename']); ?>"> Delete</a></td>
 							

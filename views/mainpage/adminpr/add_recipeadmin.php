@@ -60,9 +60,15 @@
                   </div>
                 </div>
 				<div class="form-group">
-                  <label for="procedure" class="col-sm-2 control-label">Price:</label>
+                  <label for="ingredients" class="col-sm-2 control-label">Price:</label>
                   <div class="col-sm-10">
-                    <textarea rows="1" col="10" required class="form-control" id="procedure" name="recipecost" placeholder="Input the Price"></textarea>
+                    <input type="number" class="form-control" id="ingredients" name="recipecost" placeholder="Input Price" autocomplete="off" required/>
+                  </div>
+                </div>
+				<div class="form-group">
+                  <label for="ingredients" class="col-sm-2 control-label">Quantity:</label>
+                  <div class="col-sm-10">
+                    <input type="number" class="form-control" id="ingredients" name="recipequa" placeholder="Input the Quantity" autocomplete="off" required/>
                   </div>
                 </div>
 

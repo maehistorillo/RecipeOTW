@@ -3,8 +3,8 @@
 class Recipes_model extends CI_Model {
 
 		
-	public function submit($recipename,$recipecat, $recipeing,$recipeimg,$recipecost,$recipeprocedure) {
-		$sql = 'INSERT INTO recipes VALUES ("'.$recipename.'","'.$recipecat.'","'.$recipeing.'","'.$recipeimg.'","'.$recipecost.'","'.$recipeprocedure.'")';
+	public function submit($recipename,$recipeid,$recipequa,$recipecat,$recipeing,$recipeimg,$recipecost,$recipeprocedure) {
+		$sql = 'INSERT INTO recipes VALUES ("'.$recipeid.'","'.$recipename.'","'.$recipequa.'","'.$recipecat.'","'.$recipeing.'","'.$recipeimg.'","'.$recipecost.'","'.$recipeprocedure.'")';
 		
 		return $this->db->simple_query($sql);
 		
@@ -32,6 +32,18 @@ class Recipes_model extends CI_Model {
 
 	/* 	$this->db->where($data);
 		$this->db->delete($this->table);*/
+	}
+		
+		public function categorize($recipename){
+		
+		$report = [];
+		$recipecat = "Dish";
+		$sql = "SELECT recipename FROM recipes WHERE recipecat = '$recipecat'";
+		$query = $this->db->query($sql);
+		foreach($query->result_array() as $row){
+			$report[] = $row;
+		}
+		return $report;
 	}
 }
 
