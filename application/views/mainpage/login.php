@@ -1,3 +1,13 @@
+<script>
+
+    $(function() {
+    $('#email,#password').on('keypress', function(e) {
+        if (e.which == 32)
+            return false;
+    });
+});
+</script>
+
 <!-- Preloader -->
 <div id="preloader">
     <div id="load"></div>
