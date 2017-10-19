@@ -3,7 +3,7 @@
  <script>
 
     $(function() {
-    $('#email,#password,#cpassword,#firstname,#miname').on('keypress', function(e) {
+    $('#email,#password,#cpassword').on('keypress', function(e) {
         if (e.which == 32)
             return false;
     });
@@ -164,6 +164,7 @@ $(document).ready(function() {
 </div>
 </section>
 <script>
+  /*
  document.getElementById("address").addEventListener("input", forceLower);
 function forceLower(evt) {
   var words = evt.target.value.split(/\s+/g);
@@ -173,6 +174,7 @@ function forceLower(evt) {
   });
   evt.target.value = newWords.join(" "); 
 }
+*/
 
   document.getElementById("surname").addEventListener("input", forceLower);
 function forceLower(evt) {
