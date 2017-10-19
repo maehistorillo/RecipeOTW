@@ -77,15 +77,7 @@ $(document).ready(function() {
             <div class="col-md-12">
             <form class="form-horizontal" action="<?php echo base_url('Mainpage/signupAction'); ?>" method="post" id="loginForm">
               <fieldset class="fieldset" style="padding-top: 10px;">
-                <!--
-                <div class="form-group">
-                  <label for="username" class="col-xs-3 control-label">Username: </label>
-                  <div class="col-xs-9">
-                    <input type="text" required minlength="5" maxlength="30" class="form-control" id="username" name="username" placeholder="Username" autocomplete="off" pattern="[a-zA-Z0-9]+" title="Must be at least 5 characters, and may contain at lease one letter" />
-                  </div>
-                </div>
-                -->
-
+                
                   <div class="form-group">
                   <label for="fullname" class="col-xs-3 control-label" style="color: #351E24;">Full Name: </label>
                   <div class="col-xs-4">
@@ -117,26 +109,7 @@ $(document).ready(function() {
                   </div>
                 </div>
               
-                <!--
-                  <div class="col-xs-2">
-                    <input type="text" required maxlength="1" class="form-control" id="miname" name="miname" placeholder="M.I" autocomplete="off" />
-                    </div>
-                </div>
-                  -->
-                <!--
-                <div class="form-group">
-                    <label for="birthdate" class="col-sm-3 control-label">Date of Birth:</label>
-                    <div class="col-sm-5">
-                        <input class="form-control datepicker" required id="birthdate" name="birthdate" type="date"/>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label class="col-sm-8 control-label" for="address">Address: </label>
-                    <div class="col-xs-7">
-                    <textarea rows="3" required class="form-control" id="address" name="address" placeholder="Address" ></textarea>
-                    </div>
-                </div>
-                -->
+                
                 <div class="form-group">
                   <div class="col-sm-offset-4 col-xs-10" style="padding-left: 0px;">
                     <a href="<?php echo base_url('/Mainpage/Login'); ?>"><h6 style="color: #351E24; font-size: 10px; padding-left: 10px; padding-bottom: 0px;">Already have an account?</h6></a>
@@ -164,17 +137,6 @@ $(document).ready(function() {
 </div>
 </section>
 <script>
-  /*
- document.getElementById("address").addEventListener("input", forceLower);
-function forceLower(evt) {
-  var words = evt.target.value.split(/\s+/g);
-  var newWords = words.map(function(element){
-    element = element.toLowerCase();
-    return element !== "" ?  element[0].toUpperCase() + element.substr(1, element.length) : "";
-  });
-  evt.target.value = newWords.join(" "); 
-}
-*/
 
   document.getElementById("surname").addEventListener("input", forceLower);
 function forceLower(evt) {
