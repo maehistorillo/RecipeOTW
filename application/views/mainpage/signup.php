@@ -89,10 +89,10 @@ $(document).ready(function() {
                   <div class="form-group">
                   <label for="fullname" class="col-xs-3 control-label" style="color: #351E24;">Full Name: </label>
                   <div class="col-xs-4">
-                    <input type="text" required maxlength="19" class="form-control" id="surname" name="surname" placeholder="Surname" autocomplete="off" />
+                    <input type="text" required maxlength="19" class="form-control" id="surname" name="surname" placeholder="Surname" autocomplete="off" pattern="[a-zA-Z]+"  title="Must not contain number/s" />
                   </div>
                   <div class="col-xs-4">
-                    <input type="text" required maxlength="19" class="form-control" id="firstname" name="firstname" placeholder="Firstname" autocomplete="off" />
+                    <input type="text" required maxlength="19" class="form-control" id="firstname" name="firstname" placeholder="Firstname" autocomplete="off" pattern="[a-zA-Z]+" title="Must not contain number/s" />
                   </div>
                 </div>    
                 <div class="form-group" style="padding-left: 18px;">
