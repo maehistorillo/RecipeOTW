@@ -58,9 +58,27 @@ $(document).ready(function() {
 
 
 </script>
-      
-
 <body>
+<nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                
+        <a class="navbar-brand" href="<?php echo base_url('Mainpage/Home');?>">
+        <h1>ROTW</h1>
+        </a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+           <a class="pull-right" href="<?php echo base_url('Mainpage/Home');?>">
+            <h3 style="color: white;">HOME</h3></a>
+          </a>
+      
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>      
+
+
 <!-- Preloader -->
 <div id="preloader">
     <div id="load"></div>
@@ -111,8 +129,8 @@ $(document).ready(function() {
               
                 
                 <div class="form-group">
-                  <div class="col-sm-offset-4 col-xs-10" style="padding-left: 0px;">
-                    <a href="<?php echo base_url('/Mainpage/Login'); ?>"><h6 style="color: #351E24; font-size: 10px; padding-left: 10px; padding-bottom: 0px;">Already have an account?</h6></a>
+                  <div class="col-sm-offset-4 col-xs-10" style="padding-left: 22px;">Already have an account?
+                    <a href="<?php echo base_url('/Mainpage/Login'); ?>"><h6 style="color: #351E24; font-size: 10px; padding-left: 10px; padding-bottom: 0px; font-size: 15px; padding-left: 45px;">Sign in</h6></a>
                     
                   </div>
                 </div>
