@@ -31,13 +31,13 @@
               <div class="form-group" style="padding-left: 18px;">
                   <label for="email" class="col-xs-2 control-label" style="color: #351E24;">Email: </label>
                   <div class="col-xs-9" style="padding-left: 42px; padding-right: 16px;">
-                    <input type="text" required class="form-control" maxlength="40" id="email" name="email" placeholder="Email" autocomplete="off" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" title="Must be characters@characters.domain"/>
+                    <input type="text" required class="form-control" maxlength="40" id="email" name="email" placeholder="Enter email" autocomplete="off" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" title="Must be characters@characters.domain"/>
               </div>
                 </div>
                <div class="form-group" style="padding-left: 30px;">
                   <label for="password" class="col-xs-1 control-label" style="color: #351E24;">Password: </label>
                   <div class="col-xs-10" style="padding-left: 72px; padding-right: 17px;">
-                    <input type="password" required minlength="8" maxlength="40" class="form-control" id="password" name="password" placeholder="Password" autocomplete="off" pattern="(?=.*\d)[a-zA-Z0-9]+" title="Must contain at least one number and can be 8 (min) characters long" /> 
+                    <input type="password" required minlength="8" maxlength="40" class="form-control" id="password" name="password" placeholder="Type your password" autocomplete="off" pattern="(?=.*\d)[a-zA-Z0-9]+" title="Must contain at least one number and can be 8 (min) characters long" /> 
                     <a href="#"><h6 style="font-size:10px; color: #351E24; padding-top: 5px; padding-bottom: 0px; padding-left: 10px;">Forgot Password?</h6></a>
                     </div>
                 
