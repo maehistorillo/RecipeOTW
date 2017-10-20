@@ -90,13 +90,13 @@ $(document).ready(function() {
                 <div class="form-group" style="padding-left: 18px;">
                   <label for="email" class="col-xs-2 control-label" style="color: #351E24;">Email: </label>
                   <div class="col-xs-9" style="padding-left: 42px; padding-right: 16px;">
-                    <input type="text" required class="form-control" maxlength="38" id="email" name="email" placeholder="Email" autocomplete="off" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" title="Must be characters@characters.domain"/>
+                    <input type="text" required class="form-control" maxlength="38" id="email" name="email" placeholder="Enter email address" autocomplete="off" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" title="Must be characters@characters.domain"/>
                   </div>
                 </div>
                 <div class="form-group" style="padding-left: 34px;">
                   <label for="password" class="col-xs-1 control-label" style="color: #351E24;">Password: </label>
                   <div class="col-xs-10" style="padding-left: 70px; padding-right: 18px;">
-                    <input type="password" required minlength="8" maxlength="38" class="form-control" id="password" name="password" placeholder="Password" autocomplete="off" pattern="(?=.*\d)[a-zA-Z0-9]+" title="Must contain at least one number and can be 8 (min) characters long" />
+                    <input type="password" required minlength="8" maxlength="38" class="form-control" id="password" name="password" placeholder="Type a password" autocomplete="off" pattern="(?=.*\d)[a-zA-Z0-9]+" title="Must contain at least one number and can be 8 (min) characters long" />
                     <input type="checkbox" id="showHide" />
                     <label for="showHide" id="showHideLabel" style="color: #351E24;">Show Password</label>
                   </div>
@@ -105,7 +105,7 @@ $(document).ready(function() {
                 <div class="form-group">
                   <label for="cpassword" class="col-xs-1" style="padding-left: 49px; color: #351E24;">Confirm Password: </label>
                   <div class="col-xs-10" style="padding-left: 80px; padding-right: 35px;">
-                    <input type="password" required minlength="8" maxlength="40" class="form-control" id="cpassword" name="cpassword" placeholder="Confirm Password" autocomplete="off" oninput="check(this)" /> <span id='message'></span>
+                    <input type="password" required minlength="8" maxlength="40" class="form-control" id="cpassword" name="cpassword" placeholder="Re-type Password" autocomplete="off" oninput="check(this)" /> <span id='message'></span>
                   </div>
                 </div>
               
