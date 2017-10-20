@@ -38,7 +38,7 @@
                   <label for="password" class="col-xs-1 control-label" style="color: #351E24;">Password: </label>
                   <div class="col-xs-10" style="padding-left: 72px; padding-right: 17px;">
                     <input type="password" required minlength="8" maxlength="40" class="form-control" id="password" name="password" placeholder="Password" autocomplete="off" pattern="(?=.*\d)[a-zA-Z0-9]+" title="Must contain at least one number and can be 8 (min) characters long" /> 
-                    <a href="#"><h6 style="font-size:10px; color: #351E24; padding-top: 5px; padding-bottom: 0px; padding-left: 10px;">Forgot Password?</h6></a>
+                    <a href="<?php echo base_url('Mainpage/forgotpassword'); ?>"><h6 style="font-size:10px; color: #351E24; padding-top: 5px; padding-bottom: 0px; padding-left: 10px;">Forgot Password?</h6></a>
                     </div>
                 
                   <div class="col-sm-offset-4 col-xs-10" style="padding-left: 3px; padding-top: 0px;">
