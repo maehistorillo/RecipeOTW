@@ -1,29 +1,67 @@
+<!-- ETC -->
+<html>
+<head>
+</head>
+<body id="page-top" data-spy="scroll" data-target=".navbar-custom">
+	<div>
+	<!-- Preloader -->
+	<div id="preloader">
+	  <div id="load"></div>
+	</div>
 
-	<nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
-        <div class="container">
-            <div class="navbar-header page-scroll ">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
-                    <i class="fa fa-bars"></i>
-                </button>
-				<a class="navbar-brand" href="index.html">
-				<h1  id="shadow">ROTW</h1>
-				</a>
-				
-            </div>
-
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse navbar-right navbar-main-collapse" >
+    <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+              <?php 
+			
+			
+			if(!isset($username)){
+				echo '
+			<div class="collapse navbar-collapse navbar-right navbar-main-collapse">
       <ul class="nav navbar-nav">
-        <li><a href="<?php echo base_url('Mainpage/Home') ?>">Home</a></li>
-		<li><a href="#cuisine">My Account</a></li>
-		<li><a href="#about">Add Review</a></li>
-		<li><a href="#review">Log Out</a></li>
-      </ul>
+        <li><a href="'.base_url('Mainpage/Home/').'">Home</a></li>
+        <li><a href="#recipe">Featured Recipes</a></li>
+		<li><a href="#service">Cuisines</a></li>
+		<li><a href="#aboutus">About Us</a></li>
+		<li><a href="#contact">Reviews</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Accounts <b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li><a href="'.base_url('Mainpage/Login').'">Log In</a></li>
+            <li><a href="'.base_url('Mainpage/Signup').'">Sign Up</a></li>
+          </ul>
         </li>
       </ul>
-            </div>
-            <!-- /.navbar-collapse -->
-        </div>
+            </div> 
+			';
+			}
+			else{
+				echo '<div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+      <ul class="nav navbar-nav">
+        <li><a href="'.base_url('Mainpage/Home/').'">Home</a></li>
+        <li><a href="#recipe">Featured Recipes</a></li>
+		<li><a href="#service">Cuisines</a></li>
+		<li><a href="#aboutus">About Us</a></li>
+		<li><a href="#contact">Reviews</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Accounts <b class="caret"></b></a>
+          <ul class="dropdown-menu">';
+		  if($usercred == 1){
+			  echo'
+            <li><a href="'.base_url('/Mainpage/Admin').'">'.$username.'</a></li>
+			';
+		  }
+		  else{
+			  echo'
+			<li><a href="'.base_url('/Mainpage/User').'">'.$username.'</a></li>
+			';
+		  }
+		  echo'
+            <li><a href="'.base_url('/Mainpage/logout').'">Logout</a></li>
+          </ul>
+        </li>
+      </ul>
+            </div>';
+			}
+			?>
         <!-- /.container -->
     </nav>
 
@@ -47,7 +85,7 @@
 	</div>
 
 	<div class="col-md-3">
-		<div class="card" style="height:53%">
+		<div class="card">
 			<img src="<?php echo base_url('bootstrap/img/cat/courgettebacon.jpg'); ?>" alt="Creamy Courgette & Bacon Pasta" style="width:100%">
 			<h5><br />Creamy Courgette & Bacon Pasta</h5>
 			<p><span style="font-size:30px; cursor:pointer" class="open" data-target="A1"><button >See More...</button></span></p>
@@ -55,7 +93,7 @@
 	</div>
 	
 	<div class="col-md-3">
-		<div class="card" style="height:53%" style="height:53%" style="height:53%">
+		<div class="card">
 			<img src="<?php echo base_url('bootstrap/img/cat/marmitespag.jpg'); ?>" alt="Marmite & Pancetta Spaghetti" style="width:100%">
 
 			<h5><br />Marmite & Pancetta Spaghetti</h5>
@@ -64,7 +102,7 @@
 	</div>
 	
 	<div class="col-md-3">
-		<div class="card" style="height:53%">
+		<div class="card">
 			<img src="<?php echo base_url('bootstrap/img/cat/lambcurry.jpg'); ?>" alt="Lamb Curry" style="width:100%">
 			<h5><br />Home-Style Lamb Curry<br /><br /></h5>
 			<p><span style="font-size:30px; cursor:pointer" class="open" data-target='A3'><button>See More...</button></span></p>
@@ -72,7 +110,7 @@
 	</div>
 	
 	<div class="col-md-3">
-		<div class="card" style="height:53%">
+		<div class="card">
 			<img src="<?php echo base_url('bootstrap/img/cat/Lasagne.jpg'); ?>" alt="John" style="width:100%">
 			<h5><br />Spinach & Courgette Lasagna</h5>
 			<p><span style="font-size:30px; cursor:pointer" class="open" data-target='A4'><button>See More...</button></span></p>
@@ -127,7 +165,7 @@
 	<div class="row">
 			<div class="col-md-4">
 			<h3>Marmite & Pancetta Spaghetti</h3>
-			<img src="<?php echo base_url('bootstrap/img/cat/marmitespag.jpg'); ?>" />
+			<img src="<?php echo base_url('bootstrap/img/cat/courgettebacon.jpg'); ?>" />
 			</div>
 			<div class="col-md-4">
 			<h3>Ingredients</h3>
@@ -252,7 +290,7 @@
 	</div>
 
 	<div class="col-md-3">
-		<div class="card" style="height:53%">
+		<div class="card">
 			<img src="<?php echo base_url('bootstrap/img/cat/parmesanpotatosalad.jpg'); ?>" alt="Lemon-Caper Parmesan Potato Salad Bites" style="width:100%">
 			<h5><br />Lemon-Caper Parmesan Potato Salad Bites</h5>
 			<p><span style="font-size:30px; cursor:pointer" class="open" data-target="B1"><button >See More...</button></span></p>
@@ -260,7 +298,7 @@
 	</div>
 	
 	<div class="col-md-3">
-		<div class="card" style="height:53%">
+		<div class="card">
 			<img src="<?php echo base_url('bootstrap/img/cat/bacontomatobites.jpg'); ?>" alt="Bacon Endive Tomato Bites" style="width:100%">
 
 			<h5><br />Bacon Endive Tomato Bites</h5>
@@ -269,7 +307,7 @@
 	</div>
 	
 	<div class="col-md-3">
-		<div class="card" style="height:53%">
+		<div class="card">
 			<img src="<?php echo base_url('bootstrap/img/cat/Mini Corn Dogs with Cranberry Mustard.jpg'); ?>" alt="Mini Corn Dogs with Cranberry Mustard" style="width:100%">
 			<h5><br />Mini Corn Dogs with Cranberry Mustard<br /></h5>
 			<p><span style="font-size:30px; cursor:pointer" class="open" data-target='B3'><button>See More...</button></span></p>
@@ -277,7 +315,7 @@
 	</div>
 	
 	<div class="col-md-3">
-		<div class="card" style="height:53%">
+		<div class="card">
 			<img src="<?php echo base_url('bootstrap/img/cat/Strawberry Bruschetta.jpg'); ?>" alt="Strawberry Bruschetta" style="width:100%">
 			<h5><br />Strawberry Bruschetta</h5>
 			<p><span style="font-size:30px; cursor:pointer" class="open" data-target='B4'><button>See More...</button></span></p>
@@ -465,7 +503,7 @@
 	</div>
 
 	<div class="col-md-3">
-		<div class="card" style="height:53%">
+		<div class="card">
 			<img src="<?php echo base_url('bootstrap/img/cat/caramelpears.jpg'); ?>" alt="Cardamom Salted Caramel Pears" style="width:100%">
 			<h5><br />Cardamom Salted Caramel Pears</h5>
 			<p><span style="font-size:30px; cursor:pointer" class="open" data-target="C1"><button >See More...</button></span></p>
@@ -473,7 +511,7 @@
 	</div>
 	
 	<div class="col-md-3">
-		<div class="card" style="height:53%">
+		<div class="card">
 			<img src="<?php echo base_url('bootstrap/img/cat/yogurtpistacio.jpg'); ?>" alt="Easy Yogurt, Honey and Pistachio Popsicles" style="width:100%">
 
 			<h5><br />Easy Yogurt, Honey and Pistachio Popsicles</h5>
@@ -482,7 +520,7 @@
 	</div>
 	
 	<div class="col-md-3">
-		<div class="card" style="height:53%">
+		<div class="card">
 			<img src="<?php echo base_url('bootstrap/img/cat/Lgeimat.jpg'); ?>" alt="Lgeimat (Saffron and Cardamom Fritters)" style="width:100%">
 			<h5><br />Lgeimat (Saffron and Cardamom Fritters)<br /></h5>
 			<p><span style="font-size:30px; cursor:pointer" class="open" data-target='C3'><button>See More...</button></span></p>
@@ -490,7 +528,7 @@
 	</div>
 	
 	<div class="col-md-3">
-		<div class="card" style="height:53%">
+		<div class="card">
 			<img src="<?php echo base_url('bootstrap/img/cat/Mexican Chocolate Ice Cream.jpg'); ?>" alt="Mexican Chocolate Ice Cream"  style="width:100%">
 			<h5><br />Mexican Chocolate Ice Cream </h5>
 			<p><span style="font-size:30px; cursor:pointer" class="open" data-target='C4'><button>See More...</button></span></p>
@@ -546,7 +584,7 @@
 	<div class="row">
 			<div class="col-md-4">
 			<h3>Easy Yogurt, Honey and Pistachio Popsicles</h3>
-			<img src="<?php echo base_url('bootstrap/img/cat/yogurtpistacio.jpg.jpg'); ?>" />
+			<img src="<?php echo base_url('bootstrap/img/cat/yogurtpistacio.jpg'); ?>" />
 			</div>
 			<div class="col-md-4">
 			<h3>Ingredients</h3>
@@ -579,7 +617,7 @@
 	<div class="row">
 			<div class="col-md-4">
 			<h3>Lgeimat (Saffron and Cardamom Fritters)</h3>
-			<img src="<?php echo base_url('bootstrap/img/cat/Lgeimat.jpg'); ?>"/>
+			<img src="<?php echo base_url('bootstrap/img/cat/Lgeimat.jpg'); ?>" />
 			</div>
 			<div class="col-md-4">
 			<h3>Ingredients</h3>
@@ -677,7 +715,7 @@
 	</div>
 
 	<div class="col-md-3">
-		<div class="card" style="height:55%">
+		<div class="card">
 			<img src="<?php echo base_url('bootstrap/img/cat/Avocado, Blueberry, Banana....jpg'); ?>" alt="Avocado, Blueberry, Banana, and Chia Smoothie" style="width:100%">
 			<h5><br />Avocado, Blueberry, Banana, and Chia Smoothie</h5>
 			<p><span style="font-size:30px; cursor:pointer" class="open" data-target="D1"><button >See More...</button></span></p>
@@ -685,7 +723,7 @@
 	</div>
 	
 	<div class="col-md-3">
-		<div class="card" style="height:55%">
+		<div class="card">
 			<img src="<?php echo base_url('bootstrap/img/cat/Heavenly Blueberry Smoothie.jpg'); ?>" alt="Heavenly Blueberry Smoothie" style="width:100%">
 			<h5><br />Heavenly Blueberry Smoothie<br /><br /></h5>
 			<p><span style="font-size:30px; cursor:pointer"><button class="open" data-target="D2">See More...</button></span></p>
@@ -693,7 +731,7 @@
 	</div>
 	
 	<div class="col-md-3">
-		<div class="card" style="height:55%">
+		<div class="card">
 			<img src="<?php echo base_url('bootstrap/img/cat/Easy Mango Banana Smoothie.jpg'); ?>" alt="Easy Mango Banana Smoothie" style="width:100%">
 			<h5><br />Easy Mango Banana Smoothie<br /><br /></h5>
 			<p><span style="font-size:30px; cursor:pointer" class="open" data-target='D3'><button>See More...</button></span></p>
@@ -701,8 +739,7 @@
 	</div>
 	
 	<div class="col-md-3">
-		<div class="card" style="height:55%">
-		
+		<div class="card">
 			<img src="<?php echo base_url('bootstrap/img/cat/Mongolian Strawberry-Orange Juice Smoothie.jpg'); ?>" alt="Mongolian Strawberry-Orange Juice Smoothie"  style="width:100%">
 			<h5><br />Mongolian Strawberry-Orange Juice Smoothie<br /> </h5>
 			<p><span style="font-size:30px; cursor:pointer" class="open" data-target='D4'><button>See More...</button></span></p>
@@ -719,7 +756,7 @@
 		<div class="row">
 				<div class="col-md-4">
 				<h3>Avocado, Blueberry, Banana, and Chia Smoothie</h3>
-				<img src="<?php echo base_url('bootstrap/img/cat/Avocado, Blueberry, Banana...,.jpg'); ?>" />
+				<img src="<?php echo base_url('bootstrap/img/cat/Avocado, Blueberry, Banana....jpg'); ?>" />
 				</div>
 				<div class="col-md-4">
 				<h3>Ingredients</h3>
@@ -755,7 +792,7 @@
 	<div class="row">
 			<div class="col-md-4">
 			<h3>Heavenly Blueberry Smoothie</h3>
-			<img src="<?php echo base_url('bootstrap/img/cat/Heaven Blueberry Smoothie.jpg'); ?>" />
+			<img src="<?php echo base_url('bootstrap/img/cat/Heavenly Blueberry Smoothie.jpg'); ?>" />
 			</div>
 			<div class="col-md-4">
 			<h3>Ingredients</h3>
@@ -855,6 +892,6 @@
 
 
 </section>		
-
 	
-
+</body>
+</html>

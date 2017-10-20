@@ -52,7 +52,7 @@
 
       	<li id="navDashboard"><a href="<?php echo base_url('Mainpage/Home'); ?>">  Home</a></li>        
         
-        <li id="navBrand"><a href="<?php echo base_url('Mainpage/ARecipe'); ?>"><i class="glyphicon glyphicon-list-alt"></i>  Recipe</a></li>        
+        <li id="navBrand"><a href="<?php echo base_url('Mainpage/listRecipe/'); ?>"><i class="glyphicon glyphicon-list-alt"></i>  Recipe</a></li>        
 
         <li id="navCategories"><a href="<?php echo base_url('Mainpage/Category'); ?>"> <i class="glyphicon glyphicon-th-list"></i> Category</a></li>   
 
@@ -68,7 +68,7 @@
         <li class="dropdown" id="navSetting">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <i class="glyphicon glyphicon-user"></i> <span class="caret"></span></a>
           <ul class="dropdown-menu">            
-            <li id="topNavSetting"><a href="<?php echo base_url('..mainpage/admin/setting.php'); ?>"> <i class="glyphicon glyphicon-wrench"></i> Setting</a></li>            
+            <li id="topNavSetting"><a href="<?php echo base_url('Mainpage/Setting'); ?>"> <i class="glyphicon glyphicon-wrench"></i> Setting</a></li>            
             <li id="topNavLogout"><a href="<?php echo base_url('Mainpage/Logout'); ?>"> <i class="glyphicon glyphicon-log-out"></i> Logout</a></li>
           </ul>
         </li>        

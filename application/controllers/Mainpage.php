@@ -17,6 +17,10 @@ class Mainpage extends CI_Controller {
 		redirect(base_url('Mainpage/Home/'));
 	}
 	
+	public function Forgotpassword() {
+		$this->load->view('forgotpass');
+		$this->load->view('include/header');
+	}
 	public function Home(){
 		$data['title'] = "Recipe OTW";
 		$data['email'] = $this->session->userdata('email');
