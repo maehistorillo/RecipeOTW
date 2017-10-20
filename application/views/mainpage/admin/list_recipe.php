@@ -6,13 +6,13 @@
 	<table>
 		<thead>
 			<tr>
-				<th>Recipe Name</th>
-				<th>Recipe Type</th>
-				<th>Recipe Details</th>
-				<th>Recipe Image</th>
-				<th>Recipe Cost</th>
-				<th>Recipe Procedure</th>	
-				<th> </th>
+				<th>Name</th>
+				<th>Category</th>
+				<th>Ingredients</th>
+				<th>Image</th>
+				<th>Cost</th>
+				<th>Procedure</th>	
+				<th>Mema</th>
 			</tr>
 		</thead>
 		<tbody>

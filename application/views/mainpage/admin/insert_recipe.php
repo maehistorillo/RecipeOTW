@@ -5,8 +5,13 @@
 <body>
 	<form action = "<?php echo base_url('Mainpage/submitRecipe/'); ?>" method="post">
 		<p>Name: <input type="text" id="recipename" name="recipename" /></p>
-		<p>Category: <input type="text" id="recipecat" name="recipecat" /></p>
-		<p>Ingredients: <input type="text" id="recipeing" name="recipeing" /></p>
+		
+		<p>Category:</p>
+		<input type="radio" name="recipecat" value="Main Dish">Main Dish
+		<input type="radio" name="recipecat" value="Appetizer">Appetizer
+		<input type="radio" name="recipecat" value="Dessert">Dessert
+		
+		<p>Ingredients: <textarea name="recipeing" rows="4" col="50"></textarea></p>
 		
 		<p>Image: <input type="file" id="recipeimg" name="recipeimg" class="file-loading" /></p>
 		
@@ -15,12 +20,6 @@
 		<button type="submit">Submit</button>
 	</form>
 	
-<form action="" method="post">
-<input type="radio" name="radio" value="Radio 1">Radio 1
-<input type="radio" name="radio" value="Radio 2">Radio 2
-<input type="radio" name="radio" value="Radio 3">Radio 3
-<input type="submit" name="submit" value="Get Selected Values" />
-</form>
 	<form action ="<?php echo base_url('Mainpage/Admin/'); ?>">
 	<p><input type="submit" value="Back" /></p>
 	</form>
