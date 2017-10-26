@@ -6,7 +6,7 @@
 	<title><?php echo $title; ?></title>
 
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width; initial-scale=1.0" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="author" content="Mema" />
 <meta name="description" content="The description of website" />
 
@@ -37,7 +37,7 @@ input[type=text] {
     border-radius: 2px;
     font-size: 16px;
     background-color: white;
-    background-image: url('searchicon.png');
+    background-image: url<?php echo base_url('bootstrap/img/icons/searchicon.png');?>
     background-position: 10px 10px; 
     background-repeat: no-repeat;
     padding: 10px 20px 10px 40px;
@@ -69,9 +69,9 @@ input[type=text]:focus {
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">      
 
       <ul class="nav navbar-nav navbar-right">  
-      <li><input type="text" name="search" placeholder="Search.."></li>      
+      <li><input style="color: maroon; margin: 5px;" type="text" name="search" placeholder="Search.."></li>      
 
-        <li class="dropdown" id="navSetting">
+        <li class="dropdown" id="navSetting" style="padding-top: 1px;">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style="color: #fff;"> <i class="glyphicon glyphicon-user"></i> <span class="caret"></span></a>
           <ul class="dropdown-menu">            
 		  <?php if(!empty($user)){

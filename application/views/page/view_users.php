@@ -17,10 +17,10 @@
 	<table class="table-sort table-sort-search table-sort-show-search-count">
 		<thead>
 			<tr>
-				<th class="table-sort">Email    </th>
-				<th class="table-sort">Name     </th>
-				<th>Address</th>	
-				<th>Action</th>		
+				<th class="table-sort"><center>Email</center></th>
+				<th class="table-sort"><center>Name</center></th>
+				
+				<th><center>Action</center></th>		
 			</tr>
 		</thead>
 
@@ -43,10 +43,9 @@
 					
 					echo '<tr>
 							
-							<td>'.$row['email'].'</td>			
-							<td>'.$row['firstname'].' '.$row['surname'].'</td>						
-							<td>'.$row['address'].'</td>
-							<td><a href="'.base_url('User/delUser/'.$row['email']).'">Delete</a></td>
+							<td><center>'.$row['email'].'</center></td>			
+							<td><center>'.$row['firstname'].' '.$row['surname'].'</center></td>						
+							<td><center><a href="'.base_url('User/delUser/'.$row['email']).'">Delete</a></center></td>
 					</tr>';
 				}
 			?>

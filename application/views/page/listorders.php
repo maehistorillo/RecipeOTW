@@ -14,50 +14,50 @@
 	<table class="table">
 		<thead>
 			<tr>
-				<th>Order ID</th>
-				<th>Email</th>
-				<th>Cart</th>
-				<th>Date</th>
-				<th>Total Bill</th>
-				<th>Action</th>
+				<th><center>Order ID</center></th>
+				<th><center>Email</center></th>
+				<th><center>Cart</center></th>
+				<th><center>Date</center></th>
+				<th><center>Total Bill</center></th>
+				<th><center>Action</center></th>
 			</tr>
 		</thead>
 		<tbody>
 			<?php foreach($orders as $row): ?>		
 			<tr>
-				<td><?php echo $row['order_id']; ?></td>
-				<td><?php echo $row['email']; ?></td>
+				<td><center><?php echo $row['order_id']; ?></center></td>
+				<td><center><?php echo $row['email']; ?></center></td>
 				<td>
 					<table class="table table-hover">
 						<thead>
 							<tr>
 								<th>Recipe ID</th>
 								<th>Recipe</th>
-								<th>Quantity<th></th>
+								<th>Quantity</th>
 							</tr>
 						</thead>
 						<?php $json = json_decode($row['cart'], true); ?>
 						<?php foreach($json as $key => $val): ?>
 						<tbody>	
 							<tr>
+								<center>
 							<?php foreach($val as $v): ?>
 								<td><?php echo $v ?></td>
 							<?php endforeach; ?>
+						</center>
 							</tr>
 						<?php endforeach; ?>
 						</tbody>
 					</table>
 				</td>
-				<td><?php echo $row['date']; ?></td>
-				<td>P <?php echo $row['total_bill']; ?></td>
-				<td><a href="">Accept</a>&nbsp;<a href="<?php echo base_url('Transaction/cancelOrder/'.$row['order_id']);?>" >Cancel</a>
+				<td><center><?php echo $row['date']; ?></center></td>
+				<td><center>P <?php echo $row['total_bill']; ?></center></td>
+				<td><center><a href="">Accept |</a>&nbsp;<a href="<?php echo base_url('Transaction/cancelOrder/'.$row['order_id']);?>" >Cancel</a></center></td>
 			</tr>
 			<?php endforeach; ?>
 		</tbody>
 	</table>
-	<form action ="<?php echo base_url('Mainpage/Admin/'); ?>">
-	<p><input type="submit" value="Back" /></p>
-	</form>
+	
 	</div>
 
   

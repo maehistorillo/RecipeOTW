@@ -25,10 +25,10 @@ class Recipes_model extends CI_Model {
 		$query = $this->db->query("DELETE FROM recipes where recipename = '".$recipename."'");
 	}
 	
-	public function recipechoose($recipename){
+	public function recipechoose($reap){
 		
 		$report = [];
-		$sql = "SELECT * FROM recipes WHERE recipename = '$recipename'";
+		$sql = "SELECT * FROM recipes WHERE recipename = '$reap'";
 		$query = $this->db->query($sql);
 		foreach($query->result_array() as $row){
 			$report[] = $row;
@@ -107,6 +107,18 @@ class Recipes_model extends CI_Model {
 		
 		$report = [];
 		$recipecat = "sweets";
+		$sql = "SELECT * FROM recipes WHERE recipecat = '$recipecat'";
+		$query = $this->db->query($sql);
+		foreach($query->result_array() as $row){
+			$report[] = $row;
+		}
+		return $report;
+	}
+
+		public function dessert($recipename){
+		
+		$report = [];
+		$recipecat = "dessert";
 		$sql = "SELECT * FROM recipes WHERE recipecat = '$recipecat'";
 		$query = $this->db->query($sql);
 		foreach($query->result_array() as $row){

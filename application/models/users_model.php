@@ -3,10 +3,22 @@
 class Users_model extends CI_Model {
 	
 	
-	public function signup($email,$password,$balance,$surname,$firstname,$miname,$birthdate,$address,$usercred) {		
-		$sql = 'INSERT INTO users VALUES ("'.$email.'","'.$password.'","'.$balance.'","'.$surname.'","'.$firstname.'","'.$miname.'","'.$birthdate.'","'.$address.'","'.$usercred.'")';
+	public function signup($email,$password,$balance,$surname,$firstname,$usercred) {		
+		$sql = 'INSERT INTO users VALUES ("'.$email.'","'.$password.'","'.$balance.'","'.$surname.'","'.$firstname.'","'.$usercred.'")';
 		//echo $sql;
 		return $this->db->simple_query($sql);
+	}
+	
+	public function signup2($email, $userimg, $contactno, $streetadd, $cityadd, $region){
+		$sql = 'INSERT INTO users2 VALUES ("'.$email.'","'.$userimg.'","'.$streetadd.'","'.$cityadd.'","'.$region.'","'.$contactno.'")';
+		echo $sql;
+		return $this->db->simple_query($sql);
+	}
+	
+	public function updateprofile($email,$password,$balance,$usercred,$surname,$firstname,$address,$city,$pnumber){
+		$sql = 'UPDATE users set email = '.$email.', password = '.$password.', balance = '.$balance.', usercred = '.$usercred.', surname = '.$surname.', firstname = '.$firstname.', address = '.$address.', city = '.$city.', pnumber = '.$pnumber.' where email = '.$email.'';
+		return $this->db->simple_query($sql);
+		
 	}
 	
 	public function login($email, $password) {
@@ -16,7 +28,15 @@ class Users_model extends CI_Model {
 		$ok = false;
 		$userdata = [];
 		foreach($query->result() as $row){
-			$userdata = array('email' => $row->email, 'logged_in' => true);
+			$ok2 = true;
+			$q = $this->db->query('SELECT * from users2 where email = "'.$email.'"');
+			foreach($q->result() as $row2){
+				$userdata = array('email' => $row->email, 'contactno' => $row2->contactno,'logged_in' => true);
+				$ok2 = false;
+			}
+			if($ok2){
+				$userdata = array('email' => $row->email,'logged_in' => true);
+			}
 			$ok = true;
 		}
 		if($ok){		
@@ -40,7 +60,7 @@ class Users_model extends CI_Model {
 		}
 		if($ok){		
 			$this->session->set_userdata('email', $_POST['email'],'usercred',$_POST['usercred']);
-			redirect(base_url('Mainpage/Home'));
+			redirect(base_url('User/GetRecipe'));
 		}
 		else{
 			echo "Invalid email or password";

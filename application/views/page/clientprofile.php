@@ -7,7 +7,6 @@ body {
     font-weight: 300;
     color: #fff;
     background-color: #fff;
-    overflow: hidden;
 }
 
 html {
@@ -61,8 +60,9 @@ p.lead {
 
 }
 
-a {
+a{
     color: #fff;
+    font-size: 16px;
     -webkit-transition: all .2s ease-in-out;
     -moz-transition: all .2s ease-in-out;
     transition: all .2s ease-in-out;
@@ -71,7 +71,7 @@ a {
 a:hover,
 a:focus {
     text-decoration: none;
-    color: #176e61;
+    color: #fff;
 }
 
 .parallax2 {
@@ -144,7 +144,7 @@ a:focus {
 
 <div class="sidenav">
 
-        <a data-toggle="tooltip" title="All Recipe" href="<?php echo base_url('User/Client') ?>">
+ <a data-toggle="tooltip" title="All Recipe" href="<?php echo base_url('User/Client') ?>">
             <img src="<?php echo base_url('bootstrap/img/icons/logo5.png'); ?>" style="padding: 2px 2px 2px 9px; width: 80%;" />
           </a>
           <br /><br />
@@ -166,42 +166,39 @@ a:focus {
 
   <div class="container" style="padding-top: 100px;">
 		<div class="col-md-12">
-			<div class="row" style="">
+			<div class="row" >
+        <h2><b style="color: white;">&nbsp;&nbsp;&nbsp;Profile  </b> </h2><br /><br /><br />
+        <div class="col-md-3" style="padd">
+
+          
+
+        <?php foreach($data as $row): ?>
 					
-				<h2><b style="color: gray;">Setting &nbsp;&nbsp;/</b><b style="color: white;">&nbsp;&nbsp;&nbsp;Information  </b> </h2>
-				</div>
+					<img src="<?php echo base_url('bootstrap/img/team/1.jpg'); ?>" style="width: 250px;"  class="img-circle img-responsive">
 
-			<div class="col-md-3" style="padding-top: 10px;">
-					<div class="form-group">	
-					    	<div class="kv-avatar center-block">
-                    <img src="<?php echo base_url('bootstrap/img/team/1.jpg'); ?>" style="width: 250px;"  class="img-circle img-responsive">
-					    	<br />
-
-					        <input type="file" class="form-control" id="userimg" placeholder="Recipe Name" name="userimg="file-loading" style="width:210px; margin-left: 35px;"/>
-					        <br />
-					        <button style="background-color: #351e24; width: 50%; margin-left: 70px; color: white;"><i class="fa fa-edit"> Upload </i></button>
-					    </div>  
-				    </div>
-	        		</form>
+          <p style="text-align: center; font-size: 25px;"><b><?php echo'<span style="color:#fff"> '.$row['firstname'].' '.$row['surname'].'</span>';?></b></p><br />
+					
 					</div>
+
 
 
 				<div class="col-md-5">
 				<div class="row" style="margin-left: 50px;">
-		
-			<form class="form-horizontal" action="<?php echo base_url('User/SubmitProfile'); ?>" method="post" id="loginForm">
-			<h4><b style="color: white;"> Information </b></h4><button  style="background-color: #351e24; width: 30%; color: white;"><i class="fa fa-edit"> Update </i></button> <br /> <br />
+				<?php foreach($data as $row): ?>
+				<h4><b style="color: white;"> Information </b></h4><button  href="<?php echo base_url('Mainpage/SettingClient') ?>" style="background-color: #351e24; width: 30%; color: white;"><i class="fa fa-edit"> Update </i></button> <br /> <br />
+			
+        <p style="color: gray; font-size: 20px;">Name:&nbsp;<?php echo'<span style="color:#fff"> '.$row['firstname'].' '.$row['surname'].'</span>';?></p>
+				<p style="color: gray; font-size: 20px;">Address:&nbsp;<?php echo'<span style="color:#fff"> '.$row['address'].'</span>';?></p>
+				<p style="color: gray; font-size: 20px;">City:&nbsp;<?php echo'<span style="color:#fff"> '.$row['city'].'</span>';?></p>
+			  <p style="color: gray; font-size: 20px;">Balance:&nbsp;<?php echo'<span style="color:#fff"> '.$row['balance'].'</span>';?></p>
+        <p style="color: gray; font-size: 20px;">Email:&nbsp;<?php echo'<span style="color:#fff">'.$row['email'].'</span>'; ?></p>
 
-        <label style="color: gray; font-size: 20px;"> Firstname: </label> <input type="text" class="form-control" id="recipename" name="recipename" placeholder="firstname" autocomplete="off" required/>
-        <label style="color: gray; font-size: 20px;"> Lastname: </label> <input type="text" class="form-control" id="recipename" name="recipename" placeholder="lastname" autocomplete="off" required/>
-        
-				<label style="color: gray; font-size: 20px;">Address: </label><textarea rows="3" required class="form-control" id="procedure" name="streetadd"Address"></textarea>
-				<label style="color: gray; font-size: 20px;">City: </label><input type="text" class="form-control" id="recipename" name="cityadd" placeholder="City" autocomplete="off" required/>
-			  <label style="color: gray; font-size: 20px;">Phone Number: </label><input type="text" class="form-control" id="recipename" name="contactno" placeholder="Name" autocomplete="off" required/>
-        </form>
         </div>
 				</div>
+        <?php endforeach; ?>
 
+				
+				<?php endforeach; ?>
 			
 		</div>
 	</div>

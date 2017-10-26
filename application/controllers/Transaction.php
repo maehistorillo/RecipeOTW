@@ -12,7 +12,7 @@ class Transaction extends CI_Controller {
 		$this->load->model('orders_model','order');
 		
 	}
-	
+	public $pwede=false;
 	public function index()
 	{
 		redirect(base_url('Mainpage/Home'));
@@ -74,14 +74,40 @@ class Transaction extends CI_Controller {
 		return $str.'</tbody>';
 	}
 	
-	public function removeFromCart($rowid){		
+	public function removeFromCart($rowid)
+	{		
 		$this->cart->remove($rowid);
 		redirect(base_url('User/Client'));
 	}
 	
-	public function emptyCart(){
+	public function emptyCart()
+	{
 		$this->cart->destroy();
 		redirect(base_url('User/Client'));
+	}
+	
+	public function Checkout()
+	{
+		$enter =  $this->session->userdata('email');
+		$data['title'] = "Checkout Cart";
+		$data['bill'] = $this->cart->total();
+		$data['contactno'] = $this->session->userdata('contactno');
+		if( empty($enter) )
+			{
+				redirect (base_url('Mainpage/Login'));
+			}
+			else
+			{
+				if($this->session->userdata('usercred') == 1)
+				{
+					redirect(base_url('Mainpage/Home'));
+				}
+				else
+				{
+					$this->load->view('page/checkoutpage',$data);
+					$this->load->view('base/script',$data);
+				}
+			}
 	}
 	
 	public function ListOrders()
@@ -104,6 +130,29 @@ class Transaction extends CI_Controller {
 				else
 				{
 					redirect (base_url('User/Client'));
+				}
+			}
+	}
+	
+	public function Endcheckout()
+	{
+		$data['title'] = 'Thank You!';
+		$enter =  $this->session->userdata('email');
+			if( empty($enter) )
+			{
+				redirect (base_url('Mainpage/Login'));
+			}
+			else
+			{
+				if($this->session->userdata('usercred') == 1)
+				{
+					redirect (base_url('Mainpage/Home'));
+				}
+				else
+				{
+					$this->order->saveOrder($this->order->generateID('order_id', 'orders'));
+					$this->load->view('page/endtransac');
+					$this->load->view('base/script');
 				}
 			}
 	}

@@ -1,4 +1,4 @@
-<style>
+<style type="text/css">
 
 body {
     width: 100%;
@@ -68,10 +68,11 @@ a:focus {
 
 .parallax2 {
     /* The image used */
-    background: url(../bootstrap/img/bg.jpg) top center;
+    background: url(../bootstrap/img/bg.jpg);
 
     /* Full height */
-    height: 100%; 
+    height: auto;
+	width: auto;
 
     /* Create the parallax scrolling effect */
     background-attachment: fixed;
@@ -81,10 +82,11 @@ a:focus {
 }
 .parallax3 {
     /* The image used */
-  background: url(../bootstrap/img/bgg.jpg) top center;
+  background: url(../bootstrap/img/bgg.jpg);
 
     /* Full height */
-    height: 100%; 
+    height: auto;
+	width: 100%;
 
     /* Create the parallax scrolling effect */
     background-attachment: fixed;
@@ -135,33 +137,31 @@ a:focus {
   <div class="col-md-1">
 <div class="sidenav">
 
-           <a data-toggle="tooltip" title="Recipe" href="<?php echo base_url('User/Client') ?>">
+           <a data-toggle="tooltip" title="All Recipe" href="<?php echo base_url('User/Client') ?>">
             <img src="<?php echo base_url('bootstrap/img/icons/logo5.png'); ?>" style="padding: 2px 2px 2px 9px; width: 80%;" />
           </a>
           <br /><br />
 
-          <a href="#collapse1" data-toggle="tooltip" title="Featured Recipe">
-            <i class="fa fa-book"></i>
-          </a>
-          <br /><br />
 
-          <a href="<?php echo base_url('Transaction/Cart'); ?>" data-toggle="tooltip" title="Cart">
-            <i class="glyphicon glyphicon-shopping-cart"></i>
+          <a href="<?php echo base_url('User/ProfileClient'); ?>" data-toggle="tooltip" title="Profile">
+            <i class="fa fa-user"></i>
           </a>
+
           <br /><br />
 
           <a href="<?php echo base_url('User/SettingClient'); ?>" data-toggle="tooltip" title="Setting">
             <i class="fa fa-gear"></i>
           </a>
 
-</div>
+		</div>
+	</div>
 </div>
 <div class=" parallax2 container">
 
 
-  <div class="col-md-12" style="padding-top: 60px; text-align: center;">
+  <div class="col-md-12" style="padding-top: 50px; text-align: center;">
   <h2 id="h41">ROTW</h2>
-<div id="myCarousel" class="carousel slide" data-ride="carousel">
+	<div id="myCarousel" class="carousel slide" data-ride="carousel" style="margin-left :65px;">
   <!-- Indicators -->
   <ol class="carousel-indicators">
     <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -174,24 +174,24 @@ a:focus {
     <div class="item active">
       <img src="<?php echo base_url('bootstrap/img/cat/img1.jpg'); ?>" alt="Chania" style="width: 100%;">
       <div class="carousel-caption">
-        <h3>Los Angeles</h3>
-        <p>LA is always so much fun!</p>
+        <h3>Main Dish</h3>
+        <p>Feel free to browse these foodies!</p>
       </div>
     </div>
 
     <div class="item">
       <img src="<?php echo base_url('bootstrap/img/cat/img2.jpg'); ?>" alt="Chicago" style="width: 100%;">
       <div class="carousel-caption">
-        <h3>Chicago</h3>
-        <p>Thank you, Chicago!</p>
+        <h3>Side Dish</h3>
+        <p>Feel free to browse these foodies!</p>
       </div>
     </div>
 
     <div class="item">
       <img src="<?php echo base_url('bootstrap/img/cat/img3.jpg'); ?>" alt="New York" style="width: 100%;">
       <div class="carousel-caption">
-        <h3>New York</h3>
-        <p>We love the Big Apple!</p>
+        <h3>Smoothies</h3>
+        <p>Feel free to browse these foodies!</p>
       </div>
     </div>
   </div>
@@ -206,20 +206,18 @@ a:focus {
     <span class="sr-only">Next</span>
   </a>
   <br />
-</div>
-</div>
-</div>
-</div>
-</div>
+	</div>
+				<h3 id="h41"> Recipe for the day </h3>
+			</div>
 
 
 <!-- Second Parallax -->
-  <div class="parallax3" style="padding-left: 80px;">
-    <br /><br /><br />
+  <div class="parallax3" style="margin-left: 30px;">
+    <br />
     
-    <div class="container">
+    <div class="container" style="padding-left:25x;">
     <div class="row">
-    <h3 id="h41"> Recipe for the day </h3>
+
      <!-- Divider for Category Menu -->
 		<div class="row"> 
      <!-- ***************** -->       
@@ -232,7 +230,7 @@ a:focus {
 	  echo'
 	  <div class="wow bounceInUp" data-wow-delay="0.3s"> 
       <div class="team boxed-grey"> 
-            <a href="'.base_url('User/Recipe/'.$row['recipename']).'"><img src="'.base_url('image/'.$row['recipeimg']).'" alt="Kare Kare" style="width:100%"></a>
+            <a href="'.base_url('User/Recipe/'.$row['recipename']).'"><img src="'.base_url('image/'.$row['recipeimg']).'"  style="width:100%"></a>
             
             <p class="title">'.$row['recipename'].'</p>    
       </div>
@@ -251,7 +249,7 @@ a:focus {
 	  echo'
 	  <div class="wow bounceInUp" data-wow-delay="0.3s"> 
       <div class="team boxed-grey"> 
-            <a href="'.base_url('User/Recipe/'.$row['recipename']).'"><img src="'.base_url('image/'.$row['recipeimg']).'" alt="Kare Kare" style="width:100%"></a>
+            <a href="'.base_url('User/Recipe/'.$row['recipename']).'"><img src="'.base_url('image/'.$row['recipeimg']).'"  style="width:100%"></a>
             
             <p class="title">'.$row['recipename'].'</p>    
       </div>
@@ -264,12 +262,12 @@ a:focus {
       <div class="col-xs-12 col-md-2">  
           <h5>Dessert</h5>
       <?php 
-	  foreach($pastry as $row){
+	  foreach($dessert as $row){
 	  
 	  echo'
 	  <div class="wow bounceInUp" data-wow-delay="0.3s"> 
       <div class="team boxed-grey"> 
-            <a href="'.base_url('User/Recipe/'.$row['recipename']).'"><img src="'.base_url('image/'.$row['recipeimg']).'" alt="Kare Kare" style="width:100%"></a>
+            <a href="'.base_url('User/Recipe/'.$row['recipename']).'"><img src="'.base_url('image/'.$row['recipeimg']).'"  style="width:100%"></a>
             
             <p class="title">'.$row['recipename'].'</p>    
       </div>
@@ -287,7 +285,7 @@ a:focus {
 	  echo'
 	  <div class="wow bounceInUp" data-wow-delay="0.3s"> 
       <div class="team boxed-grey"> 
-            <a href="'.base_url('User/Recipe/'.$row['recipename']).'"><img src="'.base_url('image/'.$row['recipeimg']).'" alt="Kare Kare" style="width:100%"></a>
+            <a href="'.base_url('User/Recipe/'.$row['recipename']).'"><img src="'.base_url('image/'.$row['recipeimg']).'"  style="width:100%"></a>
             
             <p class="title">'.$row['recipename'].'</p>    
       </div>
@@ -305,7 +303,26 @@ a:focus {
 	  echo'
 	  <div class="wow bounceInUp" data-wow-delay="0.3s"> 
       <div class="team boxed-grey"> 
-            <a href="'.base_url('User/Recipe/'.$row['recipename']).'"><img src="'.base_url('image/'.$row['recipeimg']).'" alt="Kare Kare" style="width:100%"></a>
+            <a href="'.base_url('User/Recipe/'.$row['recipename']).'"><img src="'.base_url('image/'.$row['recipeimg']).'"  style="width:100%"></a>
+            
+            <p class="title">'.$row['recipename'].'</p>    
+      </div>
+      </div>
+	  ';
+	  }
+	  ?>
+	  
+	  </div>
+	  
+	  <div class="col-xs-12 col-md-2">  
+          <h5>Pastry</h5>
+      <?php 
+	  foreach($pastry as $row){
+	  
+	  echo'
+	  <div class="wow bounceInUp" data-wow-delay="0.3s"> 
+      <div class="team boxed-grey"> 
+            <a href="'.base_url('User/Recipe/'.$row['recipename']).'"><img src="'.base_url('image/'.$row['recipeimg']).'"  style="width:100%"></a>
             
             <p class="title">'.$row['recipename'].'</p>    
       </div>

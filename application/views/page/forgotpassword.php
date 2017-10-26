@@ -50,7 +50,7 @@
                 <div class="form-group" style="padding-left: 18px;">
                   <label for="email" class="col-xs-2 control-label" style="color: #351E24;">Email: </label>
                   <div class="col-xs-9" style="padding-left: 42px; padding-right: 16px;">
-                    <input type="text" oninput="myFunction()" required class="form-control" maxlength="38" id="email" name="email" placeholder="Enter email address" autocomplete="off" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" title="Must be characters@characters.domain"/>
+                    <input type="text" required class="form-control" maxlength="38" id="email" name="email" placeholder="Enter email address" autocomplete="off" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" title="Must be characters@characters.domain"/>
                     <label style="color: #351E24; padding-left: 10px;">Password will redirect to your inbox.</label>
                   </div>
                 </div>
@@ -78,7 +78,7 @@
 </body>
 <script>
 
-function myFunction(){
+
 function countdown() {
     var i = document.getElementById('counter');
     if (parseInt(i.innerHTML)<=0) {
@@ -87,6 +87,6 @@ function countdown() {
     i.innerHTML = parseInt(i.innerHTML)-1;
 }
 setInterval(function(){ countdown(); },1000);
-}
+
 
 </script>

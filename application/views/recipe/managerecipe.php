@@ -18,15 +18,15 @@
       </div> <!-- /panel-heading -->
       <div class="panel-body">   
         
-    <table class="table-sort table-sort-search table-sort-show-search-count" id="manageRecipetable">
+    <table class="table-sort table-sort-search table-sort-show-search-count" id="manageRecipetable" style="width: fixed ;overflow-x:scroll;"> 
     <center>
 	<thead>
       <tr>
-        <th class="table-sort">Name</th>
-        <th class="table-sort">Category</th>
-        <th class="table-sort">Ingredients</th>
-        <th>Image</th>
-        <th>Cost</th>
+        <th class="table-sort"><center>Name</center></th>
+        <th class="table-sort"><center>Category</center></th>
+        <th class="table-sort"><center>Ingredients</center></th>
+        <th><center>Image</center></th>
+        <th><center>Cost</center></th>
 		<th>Action</th>
       </tr>
     </thead>
@@ -41,22 +41,22 @@
                 hljs.initHighlightingOnLoad(); // Syntax Hilighting
             });
         </script>
-		<center>
+		
 		<tbody
 			<?php foreach($recipes as $row): ?>
-			<tr>
-				<td><?php echo $row['recipename']; ?></td>
-				<td><?php echo $row['recipecat'];?></td>
-				<td><?php echo $row['recipeing']; ?></td>
-				<td><img src = "<?php echo base_url('image/'.$row['recipeimg'].''); ?>" class="image" style="width:128px;height:128px" /></td>
-				<td><?php echo $row['recipecost'];?></td>
-				<td><a href="">Edit</a> 
-				<a href="<?php echo base_url('User/delRecipe/'.$row['recipename']); ?>">Delete</a></td>
+			<tr >
+				<td><center><?php echo $row['recipename']; ?></center></td>
+				<td><center><?php echo $row['recipecat'];?></center></td>
+				<td><center><?php echo $row['recipeing']; ?></center></td>
+				<td><center><img src = "<?php echo base_url('image/'.$row['recipeimg'].''); ?>" class="image" style="width:128px;height:128px" /></center></td>
+				<td><center><?php echo $row['recipecost'];?></center></td>
+				<td><center> 
+				<a href="<?php echo base_url('User/delRecipe/'.$row['recipename']); ?>">Delete</a></center></td>
 			</tr>
-			</tr>
+			
 			<?php endforeach; ?>
 		</tbody>
-		</center>
+		
   </table>
         <!-- /table -->
 

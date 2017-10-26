@@ -25,14 +25,13 @@
 
 <body>
 	<!-- Core JavaScript Files -->
-	<script src="<?php echo base_url('bootstrap/js/jquery.js'); ?>"></script>
-    <script src="<?php echo base_url('bootstrap/js/jquery.min.js'); ?>"></script>
-    <script src="<?php echo base_url('bootstrap/js/bootstrap.min.js'); ?>"></script>
-    <script src="<?php echo base_url('bootstrap/js/jquery.easing.min.js'); ?>"></script>	
-	<script src="<?php echo base_url('bootstrap/js/jquery.scrollTo.js'); ?>"></script>
-	<script src="<?php echo base_url('bootstrap/js/wow.min.js'); ?>"></script>
+    <script language="JavaScript" type="text/javascript" src="<?php echo base_url('bootstrap/js/jquery.min.js'); ?>"></script>
+    <script language="JavaScript" type="text/javascript" src="<?php echo base_url('bootstrap/js/bootstrap.min.js'); ?>"></script>
+    <script language="JavaScript" type="text/javascript" src="<?php echo base_url('bootstrap/js/jquery.easing.min.js'); ?>"></script>	
+	<script language="JavaScript" type="text/javascript" src="<?php echo base_url('bootstrap/js/jquery.scrollTo.js'); ?>"></script>
+	<script language="JavaScript" type="text/javascript" src="<?php echo base_url('bootstrap/js/wow.min.js'); ?>"></script>
     <!-- Custom Theme JavaScript -->
-    <script src="<?php echo base_url('bootstrap/js/custom.js'); ?>"></script>
+    <script language="JavaScript" type="text/javascript" src="<?php echo base_url('bootstrap/js/custom.js'); ?>"></script>
 </body>
 
 </html>

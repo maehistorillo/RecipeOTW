@@ -3,6 +3,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class User extends CI_Controller {
 	
+	private $getter;
+	
 	public function __construct()
 	{
 		parent::__construct();
@@ -48,6 +50,7 @@ class User extends CI_Controller {
 		$data['find'] = $this->input->post('search');
 		$data['recipes'] = $this->recipe->recipelist('recipes');	
 		$data['maindish'] = $this->recipe->maindish('recipename');	
+		$data['dessert'] = $this->recipe->dessert('recipename');	
 		$data['appetizer'] = $this->recipe->appetizer('recipename');	
 		$data['pastry'] = $this->recipe->pastry('recipename');	
 		$data['smoothies'] = $this->recipe->smoothies('recipename');	
@@ -97,11 +100,59 @@ class User extends CI_Controller {
 			}
 	}
 	
+	public function SubmitProfile()
+	{
+		$email = $this->session->userdata('email');
+		$password = $this->session->userdata('password');
+		$balance = $this->session->userdata('balance');
+		$usercred = $this->session->userdata('usercred');
+		$firstname = $this->input->post('firstname');
+		$lastname = $this->input->post('lastname');
+		$address = $this->input->post('streetadd');
+		$city = $this->input->post('cityadd');
+		$pnumber = $this->input->post('contactno');
+		
+		$flag = $this->user->updateprofile($email, $password, $balance, $usercred, $lastname, $firstname, $address, $city, $pnumber);
+		if($flag){
+			redirect(base_url('User/SettingClient'));
+		}
+	}
+	
+	public function ProfileClient()
+	{	
+		$enter =  $this->session->userdata('email');
+			if( empty($enter) )
+			{
+				redirect (base_url('Mainpage/Login/'));
+			}
+			else
+			{
+				if($this->session->userdata('usercred') == 0)
+				{
+					$data['data'] = $this->user->viewprofile($this->session->userdata('email'));		
+					$this->load->view('page/clientprofile',$data);
+					$this->load->view('base/uheader');
+				}
+				else
+				{
+					redirect(base_url('Mainpage/Login'));
+				}
+			}
+	}
+	
 	public function Recipe($recipename)
 	{	
-		$data['recipe'] = $this->recipe->recipechoose(str_replace('%20',' ',$recipename));
+		$this->session->set_userdata('recipe',(str_replace('%20',' ',$recipename)));
+		redirect(base_url('User/GetRecipe')); 
+	}
+	
+	public function GetRecipe()
+	{	
+		$data['title'] = "GetRecipe";
+		$data['email'] = $this->session->userdata('email');
+		$data['recipe'] = $this->recipe->recipechoose($this->session->userdata('recipe'));
+		$this->load->view('base/script',$data);
 		$this->load->view('recipe/recipepage',$data);
-		$this->load->view('base/script');
 	}
 	
 	public function AddRecipe()

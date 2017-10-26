@@ -17,6 +17,12 @@ class Mainpage extends CI_Controller {
 		redirect(base_url('Mainpage/Home'));
 	}
 	
+	public function Devs()
+	{
+		
+		$this->load->view('page/devs');
+	}
+
 	public function Home()
 	{
 		$data['title'] = "Recipe On The Way!";
@@ -31,15 +37,23 @@ class Mainpage extends CI_Controller {
 	
 	public function Login()
 	{	
-		$data['title'] = "Login";		
-		$this->load->view('base/script',$data);		
-		$this->load->view('page/login');
+		$enter =  $this->session->userdata('email');
+		if( empty($enter) )
+		{
+			$data['title'] = "Login";		
+			$this->load->view('base/script',$data);		
+			$this->load->view('page/login');
+		}
+		else
+		{
+			redirect(base_url('Mainpage/Home'));
+		}
 	}
 		
 	public function loginAction() 
 	{
 		$this->session->set_userdata($this->user->login($this->input->post('email'), $this->input->post('password')));
-	}	
+	}
 	
 	public function Forgotpass()
 	{
@@ -49,10 +63,40 @@ class Mainpage extends CI_Controller {
 	}
 	
 	public function Signup()
+	{	
+		$enter =  $this->session->userdata('email');
+			if( empty($enter) )
+			{
+				$data['title'] = "ROTW Signup";					
+				$this->load->view('base/script',$data);
+				$this->load->view('page/signup');
+			}
+			else
+			{
+				redirect(base_url('Mainpage/Home'));
+		}
+	}
+	
+	public function Signup2()
 	{
-		$data['title'] = "ROTW Signup";					
-		$this->load->view('base/script',$data);
-		$this->load->view('page/signup');
+		$enter = $this->session->userdata('email');
+		$enter2 = $this->session->userdata('contactno');
+			if(empty($enter))
+			{
+				redirect(base_url('Mainpage/Signup'));
+			}
+			else
+			{
+				if(empty($enter2))
+				{
+					$this->load->view('base/script');
+					$this->load->view('page/signup2');
+				}
+				else
+				{
+					redirect(base_url('Mainpage/Home'));
+				}
+			}		
 	}
 		
 	public function Prototype(){
@@ -66,15 +110,32 @@ class Mainpage extends CI_Controller {
 		$balance = $this->input->post('balance');
 		$surname = $this->input->post('surname');
 		$firstname = $this->input->post('firstname');
-		$miname = $this->input->post('miname');
-		$birthdate = $this->input->post('birthdate');
-		$address = $this->input->post('address');
 		$usercred = 0;
 		
-		$flag = $this->user->signup($email,$password,$balance,$surname,$firstname,$miname,$birthdate,$address,$usercred);
+		$flag = $this->user->signup($email,$password,$balance,$usercred,$surname,$firstname);
 		if($flag)
 		{
 			$this->session->set_userdata($this->user->signuptologin($email, $password));
+		}
+	}
+	
+	public function signupAction2()
+	{
+		$email = $this->session->userdata('email');
+		$userimg = "";
+		$streetadd = $this->input->post('address');
+		$cityadd = $this->input->post('city');
+		$region = $this->input->post('region');
+		$contactno = $this->input->post('phone');
+		
+		$flag = $this->user->signup2($email,$userimg,$contactno,$streetadd,$cityadd,$region);
+		if($flag)
+		{
+			$this->session->set_userdata('contact',$contactno);
+			redirect(base_url('Transaction/Endcheckout'));
+		}
+		else{
+		echo 'Error';
 		}
 	}
 	

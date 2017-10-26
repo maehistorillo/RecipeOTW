@@ -51,12 +51,15 @@
 					<div class="checkbox-inline">
 				  <label><input type="radio" name="recipecat" value="Sweets">Sweets</label>
 					</div>
+          <div class="checkbox-inline">
+          <label><input type="radio" name="recipecat" value="Pastry">Pastry</label>
+          </div>
                   </div>
                 </div>
                 <div class="form-group">
                   <label for="ingredients" class="col-sm-2 control-label">Ingredients:</label>
                   <div class="col-sm-10">
-                    <input type="text" class="form-control" id="ingredients" name="recipeing" placeholder="Ingredients" autocomplete="off" required/>
+                    <textarea rows="3" required class="form-control" id="ingredients" name="recipeing" placeholder="How to prepare"></textarea>
                   </div>
                 </div>
                 <div class="form-group">
